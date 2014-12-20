@@ -31,15 +31,10 @@ h1 {
   box-sizing: border-box;
 }
 
-html {
-  font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 15px;
-  line-height: 1.42857143;
+  font-family: "Palatino", serif, "Times", "Lucida Grande", serif;
+  font-size: 16px;
+  line-height: 1.4;
   color: #777777;
   background-color: #FFEFD5;
 }
@@ -158,11 +153,12 @@ li {
   list-style-type: none;
 }
 
-.link-list {
+.links {
   margin-top: 180px;
   width: 570px;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Times", Verdana, Arial, serif;
 }
 
 ul {
@@ -241,6 +237,10 @@ ul {
   background-color: #e53c37;
   border-color: #e4332e;
   text-decoration: none;
+}
+
+.buttons {
+  font-family: Georgia;
 }
 
 .line {
