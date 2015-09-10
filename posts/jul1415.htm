@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Michael: July 14, 2015</title>
+    <link rel="stylesheet" href="../style.css" media="screen">
+    <script>
+    var host = "lovemeblender.github.io";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+    </script>
+  </head>
+
+  <body>
+
+    <div class="content">
+          
+      <h1>Michael</h1>
+      <h4>A little bit about me.</h4>
+      <p>Software engineer, currently working at Oracle, Dublin.</p>
+
+      <hr>
+          <div class = "date">July 14, 2015</div>
+          <h3 class="postTitle">Everyday GIT</h3> 
+          <div class="postBody">
+
+          <p>This is a collection of some git commands which I find useful in everyday tasks.</p>
+
+<h3>Add a remote</h3>
+<code>git remote add upstream &lt;remote_name&gt;</code>
+</br></br>
+<h3>List all commits in branch, each in one line</h3>
+<code>git log --oneline —decorate</code>
+</br></br>
+<h3>List all files in a commit</h3>
+<code>git ls-tree -r —name-only &lt;commit&gt;</code>
+</br></br>
+<h3>List all files in a branch</strong></h3>
+<code>git ls-tree -r —name-only &lt;branch&gt;</code>
+</br></br>
+<h3>Compare a file in different branches</h3>
+<code>git diff &lt;branch_1&gt; &lt;branch_2&gt; &lt;filename&gt;</code>
+</br></br>
+<h3>Draw git tree</strong></h3>
+<code>git log --oneline --decorate --graph --all</code>
+</br></br>
+<h3>Add &lt;filename&gt; to current branch from &lt;branch&gt;</h3>
+<code>git checkout &lt;branch&gt; &lt;filename&gt;</code>
+</br></br>
+<h3>Create &lt;branch_2&gt; and copy content from &lt;branch_1&gt;</h3>
+<code class="lastPar">git checkout -b &lt;branch_2&gt; &lt;branch_1&gt;</code>
+
+          
+        </div>
+    </div>
+    
+    <div class="footer">
+      <ul class="bottomlinks">
+        <li class="bottomli"><a href="https://github.com/lovemeblender">GitHub</a></li> |
+        <li class="bottomli"><a href="http://uk.linkedin.com/in/mdespotopoulos/">LinkedIn</a></li> |
+        <li class="bottomli"><a href="https://twitter.com/mdespotopoulos">Twitter</a></li>
+      </ul>
+    </div>
+
+  </body>
+</html>
