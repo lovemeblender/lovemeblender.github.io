@@ -27,33 +27,50 @@
 
           <p>This is a collection of some git commands which I find useful in everyday tasks.</p>
 
-<h3>Add a remote</h3>
-<code>git remote add upstream &lt;remote_name&gt;</code>
+<h3><u>Backtracking</u></h3>
+
+<h5>Discard &lt;filename&gt;'s changes in working directory</h5>
+<code>git checkout HEAD &lt;filename&gt;</code>
 </br></br>
-<h3>Unstage a file</h3>
-<code>git reset HEAD &lt;file&gt;</code>
+<h5>Unstage &lt;filename&gt;'s changes in staging area</h5>
+<code>git reset HEAD &lt;filename&gt;</code>
 </br></br>
-<h3>List all commits in branch, each in one line</h3>
+<h5>Reset to a previous commit with &lt;SHA&gt; checksum</h5>
+<code>git reset &lt;SHA&gt;</code>
+</br></br>
+
+<h3><u>Logging</u></h3>
+
+<h5>List all commits in branch, each in one line</h5>
 <code>git log --oneline —decorate</code>
 </br></br>
-<h3>List all files in a commit</h3>
+<h5>List all files in a commit</h5>
 <code>git ls-tree -r —name-only &lt;commit&gt;</code>
 </br></br>
-<h3>List all files in a branch</strong></h3>
+<h5>List all files in a branch</strong></h5>
 <code>git ls-tree -r —name-only &lt;branch&gt;</code>
 </br></br>
-<h3>Compare a file in different branches</h3>
-<code>git diff &lt;branch_1&gt; &lt;branch_2&gt; &lt;filename&gt;</code>
-</br></br>
-<h3>Draw git tree</strong></h3>
+<h5>Draw git tree</strong></h5>
 <code>git log --oneline --decorate --graph --all</code>
 </br></br>
-<h3>Add &lt;filename&gt; to current branch from &lt;branch&gt;</h3>
+
+<h3><u>Branching</u></h3>
+
+<h5>Add &lt;filename&gt; to current branch from &lt;branch&gt;</h5>
 <code>git checkout &lt;branch&gt; &lt;filename&gt;</code>
 </br></br>
-<h3>Create &lt;branch_2&gt; and copy content from &lt;branch_1&gt;</h3>
+<h5>Compare a file in different branches</h5>
+<code>git diff &lt;branch_1&gt; &lt;branch_2&gt; &lt;filename&gt;</code>
+</br></br>
+<h5>Create &lt;branch_2&gt; and copy content from &lt;branch_1&gt;</h5>
 <code class="lastPar">git checkout -b &lt;branch_2&gt; &lt;branch_1&gt;</code>
+</br></br>
 
+<h3><u>Remote</u></h3>
+
+<h5>Add a remote</h5>
+<code>git remote add upstream &lt;remote_name&gt;</code>
+</br></br>
           
         </div>
     </div>
