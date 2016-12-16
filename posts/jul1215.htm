@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Michael: July 12, 2015</title>
+    <title>Michalis: July 12, 2015</title>
     <link rel="stylesheet" href="../style.css" media="screen">
     <script>
     var host = "lovemeblender.github.io";
@@ -16,9 +16,9 @@
 
     <div class="content">
           
-      <a href="../index.htm"><h1>Michael</h1></a>
+      <a href="../index.htm"><h1>Michalis Despotopoulos</h1></a>
       <h4>A little bit about me.</h4>
-      <p>Software engineer, currently working at Oracle, Dublin.</p>
+      <p>Software engineer, currently working at Skroutz, Athens.</p>
 
       <hr>
           <div class = "date">July 12, 2015</div>
@@ -31,7 +31,7 @@
           <p>This is going to be a plain experimental presentation.</p>
 
           <h3>Birthday paradox</h3>  
-          <p class="postPar">I am just going to say that the birthday paradox has a really useful conclusion; it tells us when the first collision is going to happen! So, let’s say that we have a hash function that takes an arbitrary number of bits as input and outputs an n-bit hash. Then, we are going to see the first collision after 2<sup><i>n</i>/2</sup> additions in the collection (and if you look at this from a security point of view, an n-bit hash is going to break after 2<sup><i>n</i>/2</sup> evaluations of the hash function). Now say that we’re using the 32-bit CRC function.Then we are expecting to see the first collision after hashing 65536 items. However, when you’re hashing and then inserting in a collection – in case its size is less than 2<sup><i>16</i></sup> in this example – you’d expect to see the first collision earlier since we’re wrapping the integer representation of the hash around the collection’s size – unfortunately we don’t have infinite memory.</p>
+          <p class="postPar">I am just going to say that the birthday paradox has a really useful conclusion; it tells us when the first collision is going to happen! So, let’s say that we have a hash function that takes an arbitrary number of bits as input and outputs an n-bit hash. Then, we are going to see the first collision after 2<sup><i>n</i>/2</sup> additions in the collection (and if you look at this from a security point of view, an n-bit hash is going to break after 2<sup><i>n</i>/2</sup> evaluations of the hash function). Now say that we’re using the 32-bit CRC function. Then we are expecting to see the first collision after hashing 65536 items. However, when you’re hashing and then inserting in a collection – in case its size is less than 2<sup><i>16</i></sup> in this example – you’d expect to see the first collision earlier since we’re wrapping the integer representation of the hash around the collection’s size – unfortunately we don’t have infinite memory.</p>
 
           <h3>Description</h3>
           <p class="postPar">I used a data set of 5163 male and female first names, which you can find here. I am using a simple integer array to represent whether a cell is empty, occupied, or hosts two or more collided entries. Now my workflow was the following:
