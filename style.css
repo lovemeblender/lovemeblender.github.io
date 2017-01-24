@@ -14,7 +14,7 @@ html, body {
 
 a {
   background-color: transparent;
-  color: #4D4D4D;
+  color: #000092;
   text-decoration: none;
 }
 
@@ -40,45 +40,26 @@ code {
   font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
 }
 
-h1 {
-  font-size: 80%;
-  margin: 1% 0;
-}
-
 h2 {
   font-size: 180%;
   margin-bottom: 1%;
+  color: black;
 }
 
-h1,
 h4,
-.h1,
 .h4 {
   font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: #000000;
 }
-h1,
-.h1 {
-  margin-top: 21px;
-  margin-bottom: 10.5px;
-}
-h1 small,
-.h1 small,
-h1 .small,
-.h1 .small {
-  font-size: 65%;
-}
+
 h4,
 .h4 {
   margin-top: 10.5px;
   margin-bottom: 10.5px;
 }
-h1,
-.h1 {
-  font-size: 39px;
-}
+
 h4,
 .h4 {
   font-size: 19px;
@@ -160,7 +141,7 @@ p {
 }
 
 .hereURL {
-  color: #000000;
+  color: #000092;
   font-weight: bold;
 }
 
