@@ -15,28 +15,28 @@
   <body>
 
     <div class="content">
-          
+
       <a href="../index.htm"><h1>Michalis Despotopoulos</h1></a>
-      <h4>A little bit about me.</h4>
+      <h4>Computer and Data Science stuff</h4>
       <p>Software engineer, currently working at Skroutz, Athens.</p>
 
       <hr>
           <div class = "date">July 12, 2015</div>
-          <h3 class="postTitle">A short hashing tale</h3> 
+          <h3 class="postTitle">A short hashing tale</h3>
           <div class="postBody">
 
-          <h3>Introduction</h3>  
+          <h3>Introduction</h3>
           <p class="postPar">Have you ever wondered what is the distribution of allocations in data structures which make use of hashing, such as hash tables or hash sets, when using different datasets? How often do we have collisions? How many slots remain empty? Is the size of the data structure important? I am not going to answer any of these questions :)</p>
 
           <p>This is going to be a plain experimental presentation.</p>
 
-          <h3>Birthday paradox</h3>  
+          <h3>Birthday paradox</h3>
           <p class="postPar">I am just going to say that the birthday paradox has a really useful conclusion; it tells us when the first collision is going to happen! So, let’s say that we have a hash function that takes an arbitrary number of bits as input and outputs an n-bit hash. Then, we are going to see the first collision after 2<sup><i>n</i>/2</sup> additions in the collection (and if you look at this from a security point of view, an n-bit hash is going to break after 2<sup><i>n</i>/2</sup> evaluations of the hash function). Now say that we’re using the 32-bit CRC function. Then we are expecting to see the first collision after hashing 65536 items. However, when you’re hashing and then inserting in a collection – in case its size is less than 2<sup><i>16</i></sup> in this example – you’d expect to see the first collision earlier since we’re wrapping the integer representation of the hash around the collection’s size – unfortunately we don’t have infinite memory.</p>
 
           <h3>Description</h3>
           <p class="postPar">I used a data set of 5163 male and female first names, which you can find here. I am using a simple integer array to represent whether a cell is empty, occupied, or hosts two or more collided entries. Now my workflow was the following:
-          
-          <ol> 
+
+          <ol>
           <li>Hash each string – I used Java’s hashCode()</li>
           <li>Wrap the integer representation of the hash around the size of the collection</li>
           <li>Allocate the corresponding slot</li>
@@ -46,7 +46,7 @@
 
           <h3>Results</h3>
           <p class="postPar">I experimented with six different sizes of the collection storing the hashed strings. I start at half the total size (2581) and keep adding half the size until I reach three times the size (15489). I can summarise the whole story with the following table – which is sort of self-explanatory:</p>
-          
+
           <table class="tg">
 <tbody>
 <tr>
@@ -91,20 +91,20 @@
 
           <a href="https://mikedesp.files.wordpress.com/2015/07/figure-1.png">
 
-          <img src="https://mikedesp.files.wordpress.com/2015/07/figure-1.png" alt="Figure 1" width="80%" height="60%" ></a> 
+          <img src="https://mikedesp.files.wordpress.com/2015/07/figure-1.png" alt="Figure 1" width="80%" height="60%" ></a>
 
           <p class="postPar">Figure 2 depicts the percentage of the slots that remained unallocated (x-axis) and the percentage of the slots where we noted collisions (y-axis). Each dot on the curve is a different table size as described earlier. Essentially this is the graphical representation of the table above.</p>
 
           <a href="https://mikedesp.files.wordpress.com/2015/07/figure-2.png">
 
-          <img src="https://mikedesp.files.wordpress.com/2015/07/figure-2.png" alt="Figure 2" width="80%" height="60%" ></a> 
+          <img src="https://mikedesp.files.wordpress.com/2015/07/figure-2.png" alt="Figure 2" width="80%" height="60%" ></a>
           </br></br>
           <p class="lastPar">Snip, snap, snout, this tale's told out.</p>
 
 
         </div>
     </div>
-    
+
     <div class="footer">
       <ul class="bottomlinks">
         <li class="bottomli"><a href="https://github.com/lovemeblender">GitHub</a></li> |
