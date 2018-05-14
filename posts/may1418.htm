@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Michalis: May 14, 2018</title>
+    <link rel="stylesheet" href="../style.css" media="screen">
+    <script>
+     var host = "lovemeblender.github.io";
+     if ((host == window.location.host) && (window.location.protocol != "https:"))
+       window.location.protocol = "https";
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    <link rel="icon" href="../img/fav32.ico" type="image/gif">
+  </head>
+
+  <body>
+
+    <div class="content">
+      <a href="../index.htm"><h2>Michalis Despotopoulos</h2></a>
+      <h4>Computer and Data Science stuff.</h4>
+      <p>Software engineer, currently working at Skroutz, Athens.</p>
+      <hr>
+      <div class="postBody">
+        <div class = "date">May 14, 2018</div>
+        <h3 class="postTitle">Machine Learning for the Masses: Naive Bayes (pt.1)</h3>
+        <h3>Introduction</h3>
+        <p>Machine learning doesn’t have to be or seem complicated. It can get as
+          straight-forward as counting and multiplying, which is the case with Naive Bayes.
+          This tutorial aims to offer a mostly non-academic (without sacrificing
+          mathematical rigor) overview of Naive Bayes along with references on
+          how to take it to the next level.
+          It assumes basic knowledge of probability theory.
+        </p>
+
+        <h3>tl;dr</h3>
+        <p>Naive Bayes is a generative classifier which is really good at classifying text.
+          It is based (in fact this is all it is along with some tricks) on
+          Bayes rule, so let’s start from there.
+        </p>
+
+        <h3>Conditional probability</h3>
+        <p>A key concept to a bottom up explaination of NB is conditional probability.
+          We usually write it as \(P(A|B)\), which can be read as: the probability of A given B has occurred.
+          In general the formula is:
+          $$P(A|B) = {P(A,B) \over P(B)} = {P(B,A) \over P(A)}$$
+
+          Note that the conditional probability can be easily found with the help of a contingency table
+          and it’s the joint probability of the two events divided by the marginal probability.
+          Exactly what the formula above states.
+
+        <p>Now it's a good time to say that not all events are made dependent.
+          For example, the outcome of tossing a dice couldn't care less about the outcome of
+          any previous tosses. If the first toss is event A and the second toss is event B, then
+          we say that A and B are independent. In this case:
+          $$P(B|A)={P(B)}$$
+        </p>
+        </p>
+
+        <h3>Bayes' rule</h3>
+        <p>
+          Feel free to skip this and go directly to the actual rule, but it's
+          super easy to derive it:
+
+          Taking the formula for the conditional probability and solving
+          for marginal probability, we are having the following:
+          $${P(A|B)P(B)=P(A,B)}$$
+          If we flip A and B, we get:
+          $${P(B|A)P(A)=P(B,A)}$$
+          And finally, since \(P(A,B)=P(B,A)\):
+          $${P(A|B)P(B)=P(B|A)P(A)}$$
+          Solving for \(P(A|B)\), Bayes' rule:
+          $$P(A|B)={P(B|A)P(A) \over P(B)}$$
+
+          In Bayesian terms, \(P(A|B)\) is called <i>posterior probability</i>, \(P(B|A)\) <i>likelihood</i>, \(P(A)\) <i>prior probability</i> and \(P(B)\) <i>marginal probability</i>.
+        </p>
+
+        <h3>Training</h3>
+        <p>
+          NB is a supervised algorithm, therefore we need some kind of training examples to get started.
+          Assume we were given some manually classified sentences (i.e. some people given a sentence marked it with
+          the class he/she thinks is more relevant) as geography or economics. In reality these seven training examples
+          are by no means sufficient to make NB work properly.
+        </p>
+          </br>
+          <style type="text/css">
+           .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+           .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#fff;}
+           .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+           .tg .tg-yw4l{vertical-align:top}
+           .tg .tg-b7b8{background-color:#f9f9f9;vertical-align:top}
+          </style>
+          <table class="tg">
+            <tr>
+              <th class="tg-yw4l">Text</th>
+              <th class="tg-yw4l">Class</th>
+            </tr>
+            <tr>
+              <td class="tg-b7b8">Capital land and labor are the three factors of production</td>
+              <td class="tg-b7b8">Economics</td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">Athens is the capital of Greece</td>
+              <td class="tg-yw4l">Geography</td>
+            </tr>
+            <tr>
+              <td class="tg-b7b8">The wealth of nations</td>
+              <td class="tg-b7b8">Economics</td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">The Amazon river is also home to the piranha</td>
+              <td class="tg-yw4l">Geography</td>
+            </tr>
+            <tr>
+              <td class="tg-b7b8">Nile is the longest river on earth</td>
+              <td class="tg-b7b8">Geography</td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">The Process of Production of Capital</td>
+              <td class="tg-yw4l">Economics</td>
+            </tr>
+            <tr>
+              <td class="tg-b7b8">Australia is wider than the moon</td>
+              <td class="tg-b7b8">Geography</td>
+            </tr>
+          </table>
+
+          </br>
+          <p>
+            Essentially training is being ready for when you will get a new sentence and you are asked to classify it, in this case a geography or economics.
+            No suppose you were give the sentence: "Widest river in the world". Before classifying it as either geography or economics we need to perform the training process.
+            We can describe training in two steps:
+            <ol>
+              <li>
+                For each word \(w\) in the dictionary (i.e. all words in the training examples) and for each class \(c\), calculate the following probability \(P(w|c)\).
+                These are called <i>likelihood</i> in Bayesian terms.
+              </li>
+              <li>
+                For each class \(c\), calculate the probability \(P(c)\). This is the <i>prior</i> in Bayesian terms.
+              </li>
+            </ol>
+          </p>
+          <p>
+            We will see how to calculate these after presenting a quick but important step: <i>preprocessing</i>.
+          </p>
+        </p>
+
+        <h3>Preprocessing</h3>
+        <p>
+          Preprocessing is a prerequisite to training (you could skip it but it's not recommended) and can be as simple as mapping the words to their lowercased or stemmed form
+          e.g. Capital&rarr;capital (lowercase) or Capitals&rarr;Capit (according to <i>Porter stemmer</i>).
+          We do that in order to make sure we group the words that should be grouped.
+          For simplicity we are applying a lowercase filter only.
+        </p>
+
+        <h3>Feature selection</h3>
+        <p>
+          Furthermore, we need to create our dictionary which is going to consist of all the words which we are going to consider.
+          We can keep every single word that appears in the documents but this can lead to various issues
+          including an inflated number of features. Apart from the increased feature space, 'bad' features can also affect our results.
+        </p>
+        <p>
+          Intuitively, words such as 'the', 'is', 'of', etc. are very common and shouldn’t add much value,
+          since they won’t distinguish some topic (in contrast with something more context specific such as “oceanic”).
+          We call these “stopwords” and we completely remove them.
+        </p>
+        <p>
+          A couple of more formal ways to choose the most informative features would be ranking by their
+          <u><a href="https://en.wikipedia.org/wiki/Information_gain_in_decision_trees">Information Gain</a></u>
+          or even perform <u><a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a></u>.
+          These are slightly more advance techniques and are not in the scope of this tutorial.
+        </p>
+        <p>
+          Next step is to apply the lowercase filter to each word and also remove
+          common words 'the', 'of', 'is', 'to', 'on', 'than', 'are' and 'also'. After doing this, we are simply listing each word in the dictionary and their occurrences.
+        </p>
+
+        <h3>Counting</h3>
+        <p>It's time to do the counting part - as mentioned in the beginning, it's going to be counting and multiplying only.
+          It's trivial to create the word/frequency mapping depicted below with basic programming skills:
+        </p>
+        </br>
+        <style type="text/css">
+         .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+         .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#fff;}
+         .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+         .tg .tg-baqh{text-align:center;vertical-align:top}
+         .tg .tg-dc35{background-color:#f9f9f9;border-color:inherit;vertical-align:top}
+         .tg .tg-us36{border-color:inherit;vertical-align:top}
+         .tg .tg-b7b8{background-color:#f9f9f9;vertical-align:top}
+         .tg .tg-yw4l{vertical-align:top}
+        </style>
+        <table class="tg">
+          <tr>
+            <th class="tg-baqh" colspan="2">Geography</th>
+            <th class="tg-baqh" colspan="2">Economics</th>
+          </tr>
+          <tr>
+            <td class="tg-dc35">Word</td>
+            <td class="tg-dc35">Frequency</td>
+            <td class="tg-b7b8">Word</td>
+            <td class="tg-b7b8">Frequency</td>
+          </tr>
+          <tr>
+            <td class="tg-us36">river</td>
+            <td class="tg-us36">2</td>
+            <td class="tg-yw4l">production</td>
+            <td class="tg-yw4l">2</td>
+          </tr>
+          <tr>
+            <td class="tg-dc35">wider</td>
+            <td class="tg-dc35">1</td>
+            <td class="tg-b7b8">capital</td>
+            <td class="tg-b7b8">2</td>
+          </tr>
+          <tr>
+            <td class="tg-us36">piranha</td>
+            <td class="tg-us36">1</td>
+            <td class="tg-yw4l">wealth</td>
+            <td class="tg-yw4l">1</td>
+          </tr>
+          <tr>
+            <td class="tg-dc35">nile<br></td>
+            <td class="tg-dc35">1</td>
+            <td class="tg-b7b8">three</td>
+            <td class="tg-b7b8">1</td>
+          </tr>
+          <tr>
+            <td class="tg-us36">moon</td>
+            <td class="tg-us36">1</td>
+            <td class="tg-yw4l">process</td>
+            <td class="tg-yw4l">1</td>
+          </tr>
+          <tr>
+            <td class="tg-dc35">longest</td>
+            <td class="tg-dc35">1</td>
+            <td class="tg-b7b8">nations</td>
+            <td class="tg-b7b8">1</td>
+          </tr>
+          <tr>
+            <td class="tg-us36">home</td>
+            <td class="tg-us36">1</td>
+            <td class="tg-yw4l">land</td>
+            <td class="tg-yw4l">1</td>
+          </tr>
+          <tr>
+            <td class="tg-dc35">greece</td>
+            <td class="tg-dc35">1</td>
+            <td class="tg-b7b8">labor</td>
+            <td class="tg-b7b8">1</td>
+          </tr>
+          <tr>
+            <td class="tg-us36">earth</td>
+            <td class="tg-us36">1</td>
+            <td class="tg-yw4l">factors</td>
+            <td class="tg-yw4l">1</td>
+          </tr>
+          <tr>
+            <td class="tg-dc35">capital</td>
+            <td class="tg-dc35">1</td>
+            <td class="tg-b7b8"></td>
+            <td class="tg-b7b8"></td>
+          </tr>
+          <tr>
+            <td class="tg-us36">australia</td>
+            <td class="tg-us36">1</td>
+            <td class="tg-yw4l"></td>
+            <td class="tg-yw4l"></td>
+          </tr>
+          <tr>
+            <td class="tg-dc35">athens</td>
+            <td class="tg-dc35">1</td>
+            <td class="tg-b7b8"></td>
+            <td class="tg-b7b8"></td>
+          </tr>
+          <tr>
+            <td class="tg-us36">amazon</td>
+            <td class="tg-us36">1</td>
+            <td class="tg-yw4l"></td>
+            <td class="tg-yw4l"></td>
+          </tr>
+        </table>
+
+          </br>
+
+          <h3>Training (cont.)</h3>
+          <p>
+            Now that we are having the frequencies for each word in each class we can resume the training process. We started doing it in two steps so let's take it from there:
+            <ol>
+              <li>If you scroll up, this step requires doing a calculation for every word in the dictionary and for every class.
+                It's exactly the same work for any word and any class so let's do it for a single word and class. I randomly choose the word <i>river</i> and class <i>geography</i>:
+                $$P(river|geography)={count(river, geography) \over count(geography)}= {2 \over 13}$$
+                In words, that is the occurrences of word <i>river</i> in the geography class divided by the number of all words in geography class.
+              </li>
+              <li>The prior is even easier, it's just the number of words in geography class divided by the number of the words in the dictionary. That is:
+                $$P(geography)={count(geography) \over count(vocabulary)}={13 \over 21}$$
+              </li>
+            </ol>
+              Without doing much, we are half way there!
+              How would these data classify the sentence "Widest river in the world" now?
+            </p>
+          </p>
+          <h3>Classify</h3>
+          <p>
+            You might be wondering why exactly we calculated these probabilities during the training process. Hopefully it will become much clearer now.
+            As we said we need to classify the sentence "Widest river in the world".
+            First we should apply the exact same filters and feature selection applied at the
+            training data, i.e. not much: lowercase everything and remove stopwords.
+            This preprocessing step would leave us with "widest river world".
+            At last it's time to put Bayes' rule in action!
+          </p>
+
+          <p>
+            We have already said what needs to be done, which is calculating the probabilities for both categories to occur given this text. Let's get started:
+            Using Bayes' rule, we need to calculate:
+            $${P(geography|'widest,river,world')} = {P('widest,river,world'|geography)P(geography) \over P('widest,river,world')}$$
+            and
+            $${P(economics|'widest,river,world')} = {P('widest,river,world'|economics)P(economics) \over P('widest,river,world')}$$
+            Why is that? Because the question is, what are the odds given the sentence "Widest river in the world" it talks about geography? The answer is simply Bayes' rule.
+            You can go back and check, it should make sense.
+          </p>
+          <p>
+            No, between these two, whatever probability is the highest, this is our winner. We can start working with geography.
+            Note that since we are comparing these probabilities and the denominator is the same with both classes, we can omit it. So it becomes:
+            $$P(geography|'widest,river,world') = {P('widest,river,world'|geography)P(geography)}$$
+            or, in Bayesian terms:
+            $$posterior=likelihood*prior$$
+          </p>
+          <p>
+            We already have the prior from the training! We can calculate the likelihood
+            by applying the <u><a href="https://en.wikipedia.org/wiki/Chain_rule_(probability)">probability chain rule</a></u>.
+            This is inefficient as we need to keep track of the co-occurrences of all of these words in the class we are examining.
+            Instead we are doing a simplification: assume that each word is independent from every other word, given the category.
+            This is a key point in Naive Bayes and this is where the algorithm got its "naiveness" (I don't really like the term "naive",
+            there are other terms such as <i>Independent Bayes</i> which make a bit more sense to me).
+          </p>
+          <p>
+            This makes our lives a lot easier as the likelihood becomes:
+            $${P('widest'|geography) P('river'|geography) P('world'|geography)}$$
+          </p>
+          <p>
+            That is the product of the likelihood of each word independently from the other words.
+            It is an assumption of <b><i>conditional independence</i></b>.
+          </p>
+          <p>
+            Note that some of these have already been calculated during training!
+            What we don't have are words that we have never seen before, such as the word <i>widest</i>
+            (<i>bonus</i>: if we had decided to use stemming, we would already have this word because we have seen <i>wider</i> ).
+          </p>
+
+          <p>
+            The problem that arises with previously unseen words is that \(P('widest'|geography) = 0\),
+            which makes the whole product zero and therefore the final result, which is clearly wrong
+            because it cancels other words which we might have seen and yield non-zero probability.
+          </p>
+          <p>
+            In order to work around this issue we just add a constant \(k\) to the nominator and
+            \(|V|\) to the denominator where \(|V|\) is the size of the vocabulary (i.e. all the words for all classes).
+            Usually \(k=1\).
+            This is formally known as <b><i>Laplace smoothing</i></b>. Finally any unseen word such as the word <i>widest</i> becomes:
+            $$P('widest'|geography) = {0 + 1 \over 13 + 21} = {1 \over 34}$$
+            Also training slightly changes to:
+            $$P(river|geography)={count(river, geography) + 1 \over count(geography) + count(vocabulary)}= {2 + 1 \over 13 + 21} = {3 \over 34}$$
+          </p>
+          <p>
+            We are going to use Laplace smoothing everywhere, not only in unseen words.
+          </p>
+          <p>
+            Putting it all together:
+            $${P(geography|'widest,river,world')}= {1 \over 34} * {3 \over 34} * {1 \over 34} * {13 \over 21} = {0.0000508}$$
+            $${P(economics|'widest,river,world')}={1 \over 29} * {1 \over 29} * {1 \over 29} * {8 \over 21} =   {0.0000127}$$
+          </p>
+          <p>
+            We're <b>done</b>! The winner is the one with the highest probability, hence <i>geography</i>.
+          </p>
+          <h3>Recap</h3>
+          <p>
+            It might seem like a fairly long process but after doing it a couple of time it is essentially counting and multiplying.
+            Let's summarize what we did:
+          </p>
+          <ol>
+            <li>Decide which NB we are going to use. We chose Multinomial NB here.</li>
+            <li>Apply preprocessing to the training examples.</li>
+            <li><b>Training</b>: create a word to frequency mapping. This can be implemented using a <i>Dictionary</i> in most programming languages.
+              Use Laplace smoothing.</li>
+            <li><b>Classify</b>: having an incoming sentence, use the dictionary from step 2. Don't forget to apply <i>Laplace smoothing</i> for any previously unseen words.
+            Use Bayes' rule to put it all together and calculate the posteriors. The class with the highest probability wins.</li>
+            <li>Well done, have some coffee!</li>
+          </ol>
+      </div>
+    </div>
+
+    <div class="footer">
+      <ul class="bottomlinks">
+        <li class="bottomli"><a href="https://github.com/lovemeblender">GitHub</a></li> |
+        <li class="bottomli"><a href="http://uk.linkedin.com/in/mdespotopoulos/">LinkedIn</a></li> |
+        <li class="bottomli"><a href="https://twitter.com/mdespotopoulos">Twitter</a></li>
+      </ul>
+    </div>
+
+  </body>
+</html>

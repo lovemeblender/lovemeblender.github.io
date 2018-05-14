@@ -28,7 +28,7 @@ table {
   margin: 0px auto;
 }
 
-hr { 
+hr {
   display: block; height: 1px;
   border: 0; border-top: 1px solid #4D4D4D;
   margin: 1% 0; padding: 0;
@@ -124,7 +124,7 @@ p {
 }
 
 .post {
-  width: 400px;
+  width: 500px;
 }
 
 .footer, .content:after {
