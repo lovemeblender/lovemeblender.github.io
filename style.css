@@ -76,13 +76,19 @@ p {
   margin: 0 0 10.5px;
 }
 
+.dateTitle {
+vertical-align: middle;
+    margin: 0 auto;
+}
+
 .postTitle {
   font-size: 150%;
   margin-bottom: 2%;
 }
 
 .postBody {
-  width:70%;
+    width:70%;
+    margin:0 auto;
 }
 
 .postPar {
@@ -110,7 +116,6 @@ p {
   margin-left: auto;
   padding-left: 20px;
   padding-right: 20px;
-
 }
 
 .content:after {
@@ -121,10 +126,6 @@ p {
 .bottomli {
   display: inline;
   list-style-type: none;
-}
-
-.post {
-  width: 500px;
 }
 
 .footer, .content:after {
