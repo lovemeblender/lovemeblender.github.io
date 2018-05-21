@@ -60,26 +60,21 @@
           <h3>Bayes' rule</h3>
           <p>
             Feel free to skip this and go directly to the actual rule, but it's
-            super easy to derive it:
+            super easy to derive it.
 
             Taking the formula for the conditional probability and solving
             for marginal probability, we are having the following:
             $${P(A|B)P(B)=P(A,B)}$$
             If we swap A and B, we get:
 
-          Taking the formula for the conditional probability and solving
-          for marginal probability, we are having the following:
-          $${P(A|B)P(B)=P(A,B)}$$
-          If we swap A and B, we get:
+            $${P(B|A)P(A)=P(B,A)}$$
+            And finally, since \(P(A,B)=P(B,A)\):
+            $${P(A|B)P(B)=P(B|A)P(A)}$$
+            Solving for \(P(A|B)\), Bayes' rule:
+            $$P(A|B)={P(B|A)P(A) \over P(B)}$$
 
-          $${P(B|A)P(A)=P(B,A)}$$
-          And finally, since \(P(A,B)=P(B,A)\):
-          $${P(A|B)P(B)=P(B|A)P(A)}$$
-          Solving for \(P(A|B)\), Bayes' rule:
-          $$P(A|B)={P(B|A)P(A) \over P(B)}$$
-
-          In Bayesian terms, \(P(A|B)\) is called <i>posterior probability</i>, \(P(B|A)\) <i>likelihood</i>, \(P(A)\) <i>prior probability</i> and \(P(B)\) <i>marginal probability</i>.
-        </p>
+            In Bayesian terms, \(P(A|B)\) is called <i>posterior probability</i>, \(P(B|A)\) <i>likelihood</i>, \(P(A)\) <i>prior probability</i> and \(P(B)\) <i>marginal probability</i>.
+          </p>
 
         <h3>Training</h3>
         <p>
