@@ -22,14 +22,15 @@
           <h3>Introduction</h3>
           <p class="postPar">Have you ever wondered what is the distribution of allocations in data structures which make use of hashing, such as hash tables or hash sets, when using different datasets? How often do we have collisions? How many slots remain empty? Is the size of the data structure important? I am not going to answer any of these questions :)</p>
 
-          <p>This is going to be a plain experimental presentation.</p>
+        <p>This is going to be a plain experimental presentation.</p>
 
-          <h3>Birthday paradox</h3>
-          <p class="postPar">I am just going to say that the birthday paradox has a really useful conclusion; it tells us when the first collision is going to happen! So, let’s say that we have a hash function that takes an arbitrary number of bits as input and outputs an n-bit hash. Then, we are going to see the first collision after 2<sup><i>n</i>/2</sup> additions in the collection (and if you look at this from a security point of view, an n-bit hash is going to break after 2<sup><i>n</i>/2</sup> evaluations of the hash function). Now say that we’re using the 32-bit CRC function. Then we are expecting to see the first collision after hashing 65536 items. However, when you’re hashing and then inserting in a collection – in case its size is less than 2<sup><i>16</i></sup> in this example – you’d expect to see the first collision earlier since we’re wrapping the integer representation of the hash around the collection’s size – unfortunately we don’t have infinite memory.</p>
+        <h3>Birthday paradox</h3>
+        <p class="postPar">I am just going to say that the birthday paradox has a really useful conclusion; it tells us when the first collision is going to happen! So, let’s say that we have a hash function that takes an arbitrary number of bits as input and outputs an n-bit hash. Then, we are going to see the first collision after 2<sup><i>n</i>/2</sup> additions in the collection (and if you look at this from a security point of view, an n-bit hash is going to break after 2<sup><i>n</i>/2</sup> evaluations of the hash function). Now say that we’re using the 32-bit CRC function. Then we are expecting to see the first collision after hashing 65536 items. However, when you’re hashing and then inserting in a collection – in case its size is less than 2<sup><i>16</i></sup> in this example – you’d expect to see the first collision earlier since we’re wrapping the integer representation of the hash around the collection’s size – unfortunately we don’t have infinite memory.</p>
 
-          <h3>Description</h3>
-          <p class="postPar">I used a data set of 5163 male and female first names, which you can find here. I am using a simple integer array to represent whether a cell is empty, occupied, or hosts two or more collided entries. Now my workflow was the following:
+        <h3>Description</h3>
+        <p class="postPar">I used a data set of 5163 male and female first names, which you can find here. I am using a simple integer array to represent whether a cell is empty, occupied, or hosts two or more collided entries. Now my workflow was the following:
 
+<<<<<<< HEAD
             <ol>
               <li>Hash each string – I used Java’s hashCode()</li>
               <li>Wrap the integer representation of the hash around the size of the collection</li>
@@ -84,6 +85,62 @@
           <p class="postPar">Let's take a quick look at the collisions' distribution at Figure 1. There are 2581 slots (x-axis) and the number of collisions is depicted on y-axis.</p>
 
           <a href="https://mikedesp.files.wordpress.com/2015/07/figure-1.png">
+=======
+          <ol>
+            <li>Hash each string – I used Java’s hashCode()</li>
+            <li>Wrap the integer representation of the hash around the size of the collection</li>
+            <li>Allocate the corresponding slot</li>
+            <li>Number 0 signifies an empty cell, 1 an occupied cell and 2 or more a collision</li>
+          </ol>
+        </p>
+
+        <h3>Results</h3>
+        <p class="postPar">I experimented with six different sizes of the collection storing the hashed strings. I start at half the total size (2581) and keep adding half the size until I reach three times the size (15489). I can summarise the whole story with the following table – which is sort of self-explanatory:</p>
+
+        <table class="tg">
+          <tbody>
+            <tr>
+              <th class="tg-e3zv">Total</th>
+              <th class="tg-e3zv">Empty</th>
+              <th class="tg-e3zv">Collisions</th>
+            </tr>
+            <tr>
+              <td class="tg-031e">2581</td>
+              <td class="tg-031e">305 (11%)</td>
+              <td class="tg-031e">1552 (60%)</td>
+            </tr>
+            <tr>
+              <td class="tg-031e">5163</td>
+              <td class="tg-031e">1892 (36%)</td>
+              <td class="tg-031e">1348 (26%)</td>
+            </tr>
+            <tr>
+              <td class="tg-031e">7744</td>
+              <td class="tg-031e">3979 (51%)</td>
+              <td class="tg-031e">1128 (14%)</td>
+            </tr>
+            <tr>
+              <td class="tg-031e">10326</td>
+              <td class="tg-031e">6261 (60%)</td>
+              <td class="tg-031e">944 (9%)</td>
+            </tr>
+            <tr>
+              <td class="tg-031e">12907</td>
+              <td class="tg-031e">8627 (66%)</td>
+              <td class="tg-031e">766 (5%)</td>
+            </tr>
+            <tr>
+              <td class="tg-031e">15489</td>
+              <td class="tg-031e">11095 (71%)</td>
+              <td class="tg-031e">683 (4%)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="postPar">Let's take a quick look at the collisions' distribution at Figure 1. There are 2581 slots (x-axis) and the number of collisions is depicted on y-axis.</p>
+
+        <a href="https://mikedesp.files.wordpress.com/2015/07/figure-1.png">
+>>>>>>> Change blog name and style
 
             <img src="https://mikedesp.files.wordpress.com/2015/07/figure-1.png" alt="Figure 1" width="80%" height="60%" ></a>
 
@@ -91,12 +148,16 @@
 
             <a href="https://mikedesp.files.wordpress.com/2015/07/figure-2.png">
 
+<<<<<<< HEAD
               <img src="https://mikedesp.files.wordpress.com/2015/07/figure-2.png" alt="Figure 2" width="80%" height="60%" ></a>
+=======
+            <img src="https://mikedesp.files.wordpress.com/2015/07/figure-2.png" alt="Figure 2" width="80%" height="60%" ></a>
+>>>>>>> Change blog name and style
           </br></br>
           <p class="lastPar">Snip, snap, snout, this tale's told out.</p>
 
 
-        </div>
+      </div>
     </div>
 
     <div class="footer">
