@@ -46,6 +46,11 @@ h2 {
   color: black;
 }
 
+.intel {
+    font-size: 100%;
+    color: #8e2d25;
+}
+
 h4,
 .h4 {
   font-family: "News Cycle", "Arial Narrow Bold", sans-serif;

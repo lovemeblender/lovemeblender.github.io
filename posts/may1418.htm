@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Dataphile: May 14, 2018</title>
+    <title>A day In the life: May 14, 2018</title>
     <link rel="stylesheet" href="../style.css" media="screen">
     <script>
      var host = "lovemeblender.github.io";
@@ -17,30 +17,30 @@
   <body>
 
     <div class="content">
-      <a href="../index.htm"><h2>Dataphile</h2></a>
-      <h4>Computer and Data Science stuff.</h4>
-      <p>Sharing thoughts and facts.</p>
-      <hr>
-      <div class="postBody">
-        <div class = "date">May 14, 2018</div>
-        <h3 class="postTitle">Machine Learning for the Masses: Naive Bayes (pt.1)</h3>
-        <h3>Introduction</h3>
-        <p>Machine learning doesn’t have to be or seem complicated. It can get as
-          straight-forward as counting and multiplying, which is the case with Naive Bayes.
-          This tutorial aims to offer a mostly non-academic (without sacrificing
-          mathematical rigor) overview of Naive Bayes along with references on
-          how to take it to the next level.
-          It assumes basic knowledge of probability theory.
-        </p>
+      <a href="../index.htm"><h2><span class=intel>A</span> day <span class=intel>I</span>n the life</h2></a>
+        <h4>Computer and Data Science stuff.</h4>
+        <p>Sharing thoughts and facts.</p>
+        <hr>
+        <div class="postBody">
+          <div class = "date">May 14, 2018</div>
+          <h3 class="postTitle">Machine Learning for the Masses: Naive Bayes (pt.1)</h3>
+          <h3>Introduction</h3>
+          <p>Machine learning doesn’t have to be or seem complicated. It can get as
+            straight-forward as counting and multiplying, which is the case with Naive Bayes.
+            This tutorial aims to offer a mostly non-academic (without sacrificing
+            mathematical rigor) overview of Naive Bayes along with references on
+            how to take it to the next level.
+            It assumes basic knowledge of probability theory.
+          </p>
 
-        <h3>tl;dr</h3>
-        <p>Naive Bayes is a generative classifier which is really good at classifying text.
-          It is based (in fact this is all it is along with some tricks) on
-          Bayes rule, so let’s start from there.
-        </p>
+          <h3>tl;dr</h3>
+          <p>Naive Bayes is a generative classifier which is really good at classifying text.
+            It is based (in fact this is all it is along with some tricks) on
+            Bayes rule, so let’s start from there.
+          </p>
 
-        <h3>Conditional probability</h3>
-        <p>A key concept to a bottom up explaination of NB is conditional probability.
+          <h3>Conditional probability</h3>
+          <p>A key concept to a bottom up explaination of NB is conditional probability.
           We usually write it as \(P(A|B)\), which can be read as: the probability of A given B has occurred.
           In general the formula is:
           $$P(A|B) = {P(A,B) \over P(B)} = {P(B,A) \over P(A)}$$
@@ -49,23 +49,24 @@
           and it’s the joint probability of the two events divided by the marginal probability.
           Exactly what the formula above states.
 
-        <p>Now it's a good time to say that not all events are made dependent.
-          For example, the outcome of tossing a dice couldn't care less about the outcome of
-          any previous tosses. If the first toss is event A and the second toss is event B, then
-          we say that A and B are independent. In this case:
-          $$P(B|A)={P(B)}$$
-        </p>
-        </p>
+          <p>Now it's a good time to say that not all events are made dependent.
+            For example, the outcome of tossing a dice couldn't care less about the outcome of
+            any previous tosses. If the first toss is event A and the second toss is event B, then
+            we say that A and B are independent. In this case:
+            $$P(B|A)={P(B)}$$
+          </p>
+          </p>
 
-        <h3>Bayes' rule</h3>
-        <p>
-          Feel free to skip this and go directly to the actual rule, but it's
-          super easy to derive it:
+          <h3>Bayes' rule</h3>
+          <p>
+            Feel free to skip this and go directly to the actual rule, but it's
+            super easy to derive it:
 
-          Taking the formula for the conditional probability and solving
-          for marginal probability, we are having the following:
-          $${P(A|B)P(B)=P(A,B)}$$
-          If we flip A and B, we get:
+            Taking the formula for the conditional probability and solving
+            for marginal probability, we are having the following:
+            $${P(A|B)P(B)=P(A,B)}$$
+            If we swap A and B, we get:
+
           $${P(B|A)P(A)=P(B,A)}$$
           And finally, since \(P(A,B)=P(B,A)\):
           $${P(A|B)P(B)=P(B|A)P(A)}$$
@@ -375,7 +376,7 @@
           </p>
           <h3>Recap</h3>
           <p>
-            It might seem like a fairly long process but after doing it a couple of time it is essentially counting and multiplying.
+            It might seem like a fairly long process but after doing it a couple of times it is essentially counting and multiplying.
             Let's summarize what we did:
           </p>
           <ol>

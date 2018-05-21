@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Dataphile: July 12, 2015</title>
+    <title>A day In the life: July 12, 2015</title>
     <link rel="stylesheet" href="../style.css" media="screen">
     <link rel="icon" href="../img/fav32.ico" type="image/gif">
   </head>
@@ -11,14 +11,14 @@
   <body>
 
     <div class="content">
-      <a href="../index.htm"><h2>Dataphile</h2></a>
-      <h4>Computer and Data Science stuff</h4>
-      <p>Sharing thoughts and facts.</p>
+      <a href="../index.htm"><h2><span class=intel>A</span> day <span class=intel>I</span>n the life</h2></a>
+        <h4>Computer and Data Science stuff</h4>
+        <p>Sharing thoughts and facts.</p>
 
-      <hr>
-      <div class="postBody">
-        <div class = "date">July 12, 2015</div>
-        <h3 class="postTitle">A short hashing tale</h3>
+        <hr>
+        <div class="postBody">
+          <div class = "date">July 12, 2015</div>
+          <h3 class="postTitle">A short hashing tale</h3>
           <h3>Introduction</h3>
           <p class="postPar">Have you ever wondered what is the distribution of allocations in data structures which make use of hashing, such as hash tables or hash sets, when using different datasets? How often do we have collisions? How many slots remain empty? Is the size of the data structure important? I am not going to answer any of these questions :)</p>
 
@@ -30,68 +30,68 @@
           <h3>Description</h3>
           <p class="postPar">I used a data set of 5163 male and female first names, which you can find here. I am using a simple integer array to represent whether a cell is empty, occupied, or hosts two or more collided entries. Now my workflow was the following:
 
-          <ol>
-          <li>Hash each string – I used Java’s hashCode()</li>
-          <li>Wrap the integer representation of the hash around the size of the collection</li>
-          <li>Allocate the corresponding slot</li>
-          <li>Number 0 signifies an empty cell, 1 an occupied cell and 2 or more a collision</li>
-          </ol>
+            <ol>
+              <li>Hash each string – I used Java’s hashCode()</li>
+              <li>Wrap the integer representation of the hash around the size of the collection</li>
+              <li>Allocate the corresponding slot</li>
+              <li>Number 0 signifies an empty cell, 1 an occupied cell and 2 or more a collision</li>
+            </ol>
           </p>
 
           <h3>Results</h3>
           <p class="postPar">I experimented with six different sizes of the collection storing the hashed strings. I start at half the total size (2581) and keep adding half the size until I reach three times the size (15489). I can summarise the whole story with the following table – which is sort of self-explanatory:</p>
 
           <table class="tg">
-<tbody>
-<tr>
-<th class="tg-e3zv">Total</th>
-<th class="tg-e3zv">Empty</th>
-<th class="tg-e3zv">Collisions</th>
-</tr>
-<tr>
-<td class="tg-031e">2581</td>
-<td class="tg-031e">305 (11%)</td>
-<td class="tg-031e">1552 (60%)</td>
-</tr>
-<tr>
-<td class="tg-031e">5163</td>
-<td class="tg-031e">1892 (36%)</td>
-<td class="tg-031e">1348 (26%)</td>
-</tr>
-<tr>
-<td class="tg-031e">7744</td>
-<td class="tg-031e">3979 (51%)</td>
-<td class="tg-031e">1128 (14%)</td>
-</tr>
-<tr>
-<td class="tg-031e">10326</td>
-<td class="tg-031e">6261 (60%)</td>
-<td class="tg-031e">944 (9%)</td>
-</tr>
-<tr>
-<td class="tg-031e">12907</td>
-<td class="tg-031e">8627 (66%)</td>
-<td class="tg-031e">766 (5%)</td>
-</tr>
-<tr>
-<td class="tg-031e">15489</td>
-<td class="tg-031e">11095 (71%)</td>
-<td class="tg-031e">683 (4%)</td>
-</tr>
-</tbody>
-</table>
+            <tbody>
+              <tr>
+                <th class="tg-e3zv">Total</th>
+                <th class="tg-e3zv">Empty</th>
+                <th class="tg-e3zv">Collisions</th>
+              </tr>
+              <tr>
+                <td class="tg-031e">2581</td>
+                <td class="tg-031e">305 (11%)</td>
+                <td class="tg-031e">1552 (60%)</td>
+              </tr>
+              <tr>
+                <td class="tg-031e">5163</td>
+                <td class="tg-031e">1892 (36%)</td>
+                <td class="tg-031e">1348 (26%)</td>
+              </tr>
+              <tr>
+                <td class="tg-031e">7744</td>
+                <td class="tg-031e">3979 (51%)</td>
+                <td class="tg-031e">1128 (14%)</td>
+              </tr>
+              <tr>
+                <td class="tg-031e">10326</td>
+                <td class="tg-031e">6261 (60%)</td>
+                <td class="tg-031e">944 (9%)</td>
+              </tr>
+              <tr>
+                <td class="tg-031e">12907</td>
+                <td class="tg-031e">8627 (66%)</td>
+                <td class="tg-031e">766 (5%)</td>
+              </tr>
+              <tr>
+                <td class="tg-031e">15489</td>
+                <td class="tg-031e">11095 (71%)</td>
+                <td class="tg-031e">683 (4%)</td>
+              </tr>
+            </tbody>
+          </table>
 
           <p class="postPar">Let's take a quick look at the collisions' distribution at Figure 1. There are 2581 slots (x-axis) and the number of collisions is depicted on y-axis.</p>
 
           <a href="https://mikedesp.files.wordpress.com/2015/07/figure-1.png">
 
-          <img src="https://mikedesp.files.wordpress.com/2015/07/figure-1.png" alt="Figure 1" width="80%" height="60%" ></a>
+            <img src="https://mikedesp.files.wordpress.com/2015/07/figure-1.png" alt="Figure 1" width="80%" height="60%" ></a>
 
-          <p class="postPar">Figure 2 depicts the percentage of the slots that remained unallocated (x-axis) and the percentage of the slots where we noted collisions (y-axis). Each dot on the curve is a different table size as described earlier. Essentially this is the graphical representation of the table above.</p>
+            <p class="postPar">Figure 2 depicts the percentage of the slots that remained unallocated (x-axis) and the percentage of the slots where we noted collisions (y-axis). Each dot on the curve is a different table size as described earlier. Essentially this is the graphical representation of the table above.</p>
 
-          <a href="https://mikedesp.files.wordpress.com/2015/07/figure-2.png">
+            <a href="https://mikedesp.files.wordpress.com/2015/07/figure-2.png">
 
-          <img src="https://mikedesp.files.wordpress.com/2015/07/figure-2.png" alt="Figure 2" width="80%" height="60%" ></a>
+              <img src="https://mikedesp.files.wordpress.com/2015/07/figure-2.png" alt="Figure 2" width="80%" height="60%" ></a>
           </br></br>
           <p class="lastPar">Snip, snap, snout, this tale's told out.</p>
 
