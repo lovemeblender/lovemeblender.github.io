@@ -155,6 +155,10 @@ vertical-align: middle;
   font-weight: bold;
 }
 
+.just-comments {
+    margin: auto;
+}
+
 @media (min-width: 768px) {
   .content {
     width: 750px;
