@@ -142,14 +142,25 @@ vertical-align: middle;
   height: 30px;
 }
 
-.footer {
-   text-align: center;
-}
-
 .bottomlinks {
-  display: inline-block;
-
+   justify-content:center;
+   text-align:center;
 }
+
+.bottomli {
+    margin: 0 0 0 20px;
+}
+
+.footer ul li{
+  display:inline-block;
+ }
+
+.footer {
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+}
+
 
 .hereURL {
   color: #000092;
