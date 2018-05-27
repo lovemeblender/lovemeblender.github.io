@@ -190,9 +190,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-    .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -212,9 +209,6 @@ vertical-align: middle;
     .content {
         font-size: larger;
     }
-    .footer{
-        font-size: x-large;
-    }
 }
 
 /* Landscape */
@@ -223,9 +217,6 @@ vertical-align: middle;
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
@@ -238,9 +229,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -271,9 +259,6 @@ vertical-align: middle;
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-    .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
@@ -286,9 +271,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: xx-large;
-    }
 }
 
 /* Portrait */
@@ -299,9 +281,6 @@ vertical-align: middle;
   and (orientation: portrait) {
   .content {
     width: 100%
-  }
-  .footer{
-      font-size: x-large;
   }
   .mainTitle {
       font-size: 60%;
@@ -322,9 +301,6 @@ vertical-align: middle;
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
@@ -337,9 +313,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -351,9 +324,7 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
+
 }
 
 /* Landscape */
@@ -362,9 +333,6 @@ vertical-align: middle;
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- iPhone X ----------- */
@@ -377,9 +345,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -410,9 +375,6 @@ vertical-align: middle;
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- Galaxy S3 ----------- */
@@ -425,9 +387,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -436,9 +395,6 @@ vertical-align: middle;
   and (device-height: 640px)
   and (-webkit-device-pixel-ratio: 2)
   and (orientation: portrait) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Landscape */
@@ -447,9 +403,6 @@ vertical-align: middle;
   and (device-height: 640px)
   and (-webkit-device-pixel-ratio: 2)
   and (orientation: landscape) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- Galaxy S4, S5 and Note 3 ----------- */
@@ -462,9 +415,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -473,9 +423,6 @@ vertical-align: middle;
   and (device-height: 640px)
   and (-webkit-device-pixel-ratio: 3)
   and (orientation: portrait) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Landscape */
@@ -484,9 +431,6 @@ vertical-align: middle;
   and (device-height: 640px)
   and (-webkit-device-pixel-ratio: 3)
   and (orientation: landscape) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- Galaxy S6 ----------- */
@@ -499,9 +443,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -513,9 +454,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Landscape */
@@ -524,9 +462,6 @@ vertical-align: middle;
   and (device-height: 640px)
   and (-webkit-device-pixel-ratio: 4)
   and (orientation: landscape) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- Google Pixel ----------- */
@@ -539,9 +474,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -553,9 +485,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Landscape */
@@ -564,9 +493,6 @@ vertical-align: middle;
   and (device-height: 640px)
   and (-webkit-device-pixel-ratio: 3)
   and (orientation: landscape) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- Google Pixel XL ----------- */
@@ -593,9 +519,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Landscape */
@@ -607,9 +530,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- HTC One ----------- */
@@ -653,10 +573,6 @@ vertical-align: middle;
   .content {
     width: 100%
   }
-  .footer {
-      font-size: x-large;
-  }
-
 }
 
 /* Portrait */
@@ -664,9 +580,6 @@ vertical-align: middle;
   and (device-width: 480px)
   and (device-height: 800px)
   and (orientation: portrait) {
-    .footer {
-      font-size: x-large;
-    }
 }
 
 /* Landscape */
@@ -674,9 +587,6 @@ vertical-align: middle;
   and (device-width: 480px)
   and (device-height: 800px)
   and (orientation: landscape) {
-    .footer {
-      font-size: x-large;
-    }
 }
 
 /* ----------- iPad 1, 2, Mini and Air ----------- */
@@ -687,16 +597,6 @@ vertical-align: middle;
   and (max-device-width: 1024px)
   and (-webkit-min-device-pixel-ratio: 1) {
 
-  .content {
-    min-height: 98%;
-    margin-bottom: -30px;
-    padding-left: 120px;
-    padding-right: 120px;
-    font-size: x-large;
-  }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -705,16 +605,6 @@ vertical-align: middle;
   and (max-device-width: 1024px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 1) {
-  .content {
-    min-height: 98%;
-    margin-bottom: -30px;
-    padding-left: 120px;
-    padding-right: 120px;
-    font-size:x-large;
-  }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Landscape */
@@ -723,16 +613,6 @@ vertical-align: middle;
   and (max-device-width: 1024px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 1) {
-    .content {
-    min-height: 98%;
-    margin-bottom: -30px;
-    padding-left: 120px;
-    padding-right: 120px;
-    font-size:x-large;
-  }
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
@@ -742,17 +622,6 @@ vertical-align: middle;
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .content {
-    min-height: 98%;
-    margin-bottom: -30px;
-    padding-left: 120px;
-    padding-right: 120px;
-    font-size:x-large;
-  }
-  .footer{
-      font-size: x-large;
-    }
-
 }
 
 /* Portrait */
@@ -761,16 +630,6 @@ vertical-align: middle;
   and (max-device-width: 1024px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .content {
-    min-height: 98%;
-    margin-bottom: -30px;
-    padding-left: 120px;
-    padding-right: 120px;
-    font-size:x-large;
-  }
-  .footer{
-      font-size: x-large;
-  }
 }
 
 /* Landscape */
@@ -779,16 +638,6 @@ vertical-align: middle;
   and (max-device-width: 1024px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .content {
-      min-height: 98%;
-      margin-bottom: -30px;
-      padding-left: 120px;
-      padding-right: 120px;
-      font-size:x-large;
-    }
-    .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- iPad Pro 10.5" ----------- */
@@ -798,13 +647,6 @@ vertical-align: middle;
   and (min-device-width: 834px)
   and (max-device-width: 1112px)
   and (-webkit-min-device-pixel-ratio: 2) {
-  .content {
-    min-height: 98%;
-    margin-bottom: -30px;
-    padding-left: 120px;
-    padding-right: 120px;
-    font-size:x-large;
-  }
 }
 
 /* Portrait */
@@ -815,13 +657,6 @@ vertical-align: middle;
   and (max-device-width: 834px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 2) {
-  .content {
-    min-height: 98%;
-    margin-bottom: -30px;
-    padding-left: 120px;
-    padding-right: 120px;
-    font-size:x-large;
-  }
 }
 
 /* Landscape */
@@ -832,16 +667,6 @@ vertical-align: middle;
   and (max-device-width: 1112px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2) {
-  .content {
-    min-height: 98%;
-    margin-bottom: -30px;
-    padding-left: 120px;
-    padding-right: 120px;
-    font-size:x-large;
-  }
-  .footer{
-      font-size: x-large;
-  }
 }
 
 /* ----------- iPad Pro 12.9" ----------- */
@@ -851,16 +676,6 @@ vertical-align: middle;
   and (min-device-width: 1024px)
   and (max-device-width: 1366px)
   and (-webkit-min-device-pixel-ratio: 2) {
-  .content {
-    min-height: 98%;
-    margin-bottom: -30px;
-    padding-left: 120px;
-    padding-right: 120px;
-    font-size:x-large;
-  }
-  .footer{
-      font-size: x-large;
-  }
 }
 
 /* Portrait */
@@ -871,9 +686,6 @@ vertical-align: middle;
   and (max-device-width: 1024px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 2) {
-  .footer{
-      font-size: x-large;
-  }
 }
 
 /* Landscape */
@@ -884,9 +696,6 @@ vertical-align: middle;
   and (max-device-width: 1366px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2) {
-  .footer{
-      font-size: x-large;
-  }
 }
 
 /* ----------- Galaxy Tab 2 ----------- */
@@ -895,21 +704,18 @@ vertical-align: middle;
 @media
   (min-device-width: 800px)
   and (max-device-width: 1280px) {
-
 }
 
 /* Portrait */
 @media
   (max-device-width: 800px)
   and (orientation: portrait) {
-
 }
 
 /* Landscape */
 @media
   (max-device-width: 1280px)
   and (orientation: landscape) {
-
 }
 
 /* ----------- Galaxy Tab S ----------- */
@@ -919,7 +725,6 @@ vertical-align: middle;
   (min-device-width: 800px)
   and (max-device-width: 1280px)
   and (-webkit-min-device-pixel-ratio: 2) {
-
 }
 
 /* Portrait */
@@ -927,7 +732,6 @@ vertical-align: middle;
   (max-device-width: 800px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 2) {
-
 }
 
 /* Landscape */
@@ -935,7 +739,6 @@ vertical-align: middle;
   (max-device-width: 1280px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2) {
-
 }
 
 /* ----------- Nexus 7 ----------- */
@@ -946,9 +749,6 @@ vertical-align: middle;
   and (device-height: 906px)
   and (-webkit-min-device-pixel-ratio: 1.331)
   and (-webkit-max-device-pixel-ratio: 1.332) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -968,7 +768,6 @@ vertical-align: middle;
   and (-webkit-min-device-pixel-ratio: 1.331)
   and (-webkit-max-device-pixel-ratio: 1.332)
   and (orientation: landscape) {
-
 }
 
 /* ----------- Nexus 9 ----------- */
@@ -979,7 +778,6 @@ vertical-align: middle;
   and (device-height: 2048px)
   and (-webkit-min-device-pixel-ratio: 1.331)
   and (-webkit-max-device-pixel-ratio: 1.332) {
-
 }
 
 /* Portrait */
@@ -989,7 +787,6 @@ vertical-align: middle;
   and (-webkit-min-device-pixel-ratio: 1.331)
   and (-webkit-max-device-pixel-ratio: 1.332)
   and (orientation: portrait) {
-
 }
 
 /* Landscape */
@@ -999,7 +796,6 @@ vertical-align: middle;
   and (-webkit-min-device-pixel-ratio: 1.331)
   and (-webkit-max-device-pixel-ratio: 1.332)
   and (orientation: landscape) {
-
 }
 
 /* ----------- Kindle Fire HD 7" ----------- */
@@ -1009,10 +805,6 @@ vertical-align: middle;
   and (min-device-width: 800px)
   and (max-device-width: 1280px)
   and (-webkit-min-device-pixel-ratio: 1.5) {
-
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* Portrait */
@@ -1021,9 +813,7 @@ vertical-align: middle;
   and (max-device-width: 1280px)
   and (-webkit-min-device-pixel-ratio: 1.5)
   and (orientation: portrait) {
-    .footer{
-      font-size: x-large;
-    }
+
 }
 
 /* Landscape */
@@ -1032,9 +822,6 @@ vertical-align: middle;
   and (max-device-width: 1280px)
   and (-webkit-min-device-pixel-ratio: 1.5)
   and (orientation: landscape) {
-  .footer{
-      font-size: x-large;
-    }
 }
 
 /* ----------- Kindle Fire HD 8.9" ----------- */
@@ -1044,9 +831,6 @@ vertical-align: middle;
   and (min-device-width: 1200px)
   and (max-device-width: 1600px)
   and (-webkit-min-device-pixel-ratio: 1.5) {
-  .footer{
-      font-size: large;
-    }
 }
 
 /* Portrait */
@@ -1055,9 +839,6 @@ vertical-align: middle;
   and (max-device-width: 1600px)
   and (-webkit-min-device-pixel-ratio: 1.5)
   and (orientation: portrait) {
-    .footer{
-      font-size: large;
-    }
 }
 
 /* Landscape */
@@ -1066,5 +847,4 @@ vertical-align: middle;
   and (max-device-width: 1600px)
   and (-webkit-min-device-pixel-ratio: 1.5)
   and (orientation: landscape) {
-
 }
