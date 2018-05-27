@@ -201,11 +201,19 @@ vertical-align: middle;
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
-  .content {
-    width: 100%
-  }
+    .content:after {
+        margin-bottom: -15%;
+    }
+    .mainTitle {
+        font-size: 60%;
+        color: #585757;
+        font-family: "Trebuchet MS", "Times New Roman"
+    }
+    .content {
+        font-size: larger;
+    }
     .footer{
-      font-size: x-large;
+        font-size: x-large;
     }
 }
 
@@ -241,11 +249,19 @@ vertical-align: middle;
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
-    .content {
-      width: 100%
-    }
     .footer{
       font-size: xx-large;
+    }
+    .content:after {
+     margin-bottom: -15%;
+    }
+    .mainTitle {
+      font-size: 60%;
+      color: #585757;
+      font-family: "Trebuchet MS", "Times New Roman"
+    }
+    .content {
+      font-size: larger;
     }
 }
 
@@ -286,7 +302,18 @@ vertical-align: middle;
   }
   .footer{
       font-size: x-large;
-    }
+  }
+  .mainTitle {
+      font-size: 60%;
+      color: #585757;
+      font-family: "Trebuchet MS", "Times New Roman"
+  }
+  .content {
+     font-size: larger;
+  }
+  .content:after {
+     margin-bottom: -20%;
+  }
 }
 
 /* Landscape */
