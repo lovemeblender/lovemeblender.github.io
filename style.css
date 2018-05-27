@@ -152,10 +152,16 @@ vertical-align: middle;
    justify-content:center;
    text-align:center;
    padding-bottom: 1.5%;
+   padding-left: 0px;
+   padding-bottom: 0px;
 }
 
 .bottomli {
     margin: 0 0 0 20px;
+}
+
+.bottoml:first-of-type {
+    margin-left:0px;
 }
 
 .footer ul li{
