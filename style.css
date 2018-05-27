@@ -46,6 +46,12 @@ h2 {
   color: black;
 }
 
+.mainTitle {
+    font-size: 95%;
+    color: #585757;
+    font-family: "Trebuchet MS", "Times New Roman"
+}
+
 .intel {
     font-size: 100%;
     color: #8e2d25;
@@ -356,11 +362,19 @@ vertical-align: middle;
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) {
   .content {
-    width: 100%
+      width: 100%
   }
   .footer{
       font-size: x-large;
-    }
+  }
+  .content {
+      font-size: xx-large;
+  }
+  .content:after {
+      content: "";
+      display: block;
+      margin-bottom: -15%
+  }
 }
 
 /* Landscape */
