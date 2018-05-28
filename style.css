@@ -274,20 +274,6 @@ vertical-align: middle;
   and (min-device-width: 375px)
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2) {
-  .content {
-    width: 100%
-  }
-}
-
-/* Portrait */
-@media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 667px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-  .content {
-    width: 100%
-  }
   .body {
       line-height:1.25em;
       font-size: 1em;
@@ -307,6 +293,17 @@ vertical-align: middle;
   .h4 {
       font-size:1.125em;
       line-height:1.11111111em;
+  }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  .content {
+    width: 100%
   }
   .mainTitle {
       font-size: 60%;
