@@ -204,7 +204,7 @@ vertical-align: middle;
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
-    .content:after {
+    .push {
         margin-bottom: -15%;
     }
     .mainTitle {
@@ -246,7 +246,7 @@ vertical-align: middle;
     .footer{
       font-size: xx-large;
     }
-    .content:after {
+    .push {
      margin-bottom: -15%;
     }
     .mainTitle {
@@ -288,6 +288,26 @@ vertical-align: middle;
   .content {
     width: 100%
   }
+  .body {
+      line-height:1.25em;
+      font-size: 1em;
+  }
+  .h1 {
+      font-size: 2em;
+      line-height:1.25em;
+  }
+  .h2 {
+      font-size:1.625em;
+      line-height:1.15384615em;
+  }
+  .h3 {
+      font-size:1.375em;
+      line-height:1.13636364em;
+  }
+  .h4 {
+      font-size:1.125em;
+      line-height:1.11111111em;
+  }
   .mainTitle {
       font-size: 60%;
       color: #585757;
@@ -296,7 +316,7 @@ vertical-align: middle;
   .content {
      font-size: larger;
   }
-  .content:after {
+  .push {
      margin-bottom: -20%;
   }
 }
@@ -368,7 +388,7 @@ vertical-align: middle;
   .content {
       font-size: xx-large;
   }
-  .content:after {
+  .push {
       content: "";
       display: block;
       margin-bottom: -15%
