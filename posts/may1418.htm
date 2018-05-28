@@ -67,7 +67,8 @@
           we say that A and B are independent. In this case:
           $$P(B|A)={P(B)}$$
         </p>
-
+        <img src="../img/nbcond.jpg" alt="Conditional Probability" height="230" width="450" border="1">
+        <br>
         <h3>Bayes' rule</h3>
         <p>
           Feel free to skip this and go directly to the actual rule, but it's
@@ -136,7 +137,7 @@
               <td class="tg-b7b8">Geography</td>
             </tr>
           </table>
-
+          <p style="text-align:center;"><i>table 1</i></p>
           </br>
           <p>
             Now suppose you were give the sentence: "Widest river in the world".
@@ -156,44 +157,44 @@
           <p>
             We will see how to calculate these after presenting a quick but important step: <i>preprocessing</i>.
           </p>
-      </p>
+        </p>
 
-      <h3>Preprocessing</h3>
-      <p>
-        Preprocessing is a prerequisite to training (you could skip it but it's not recommended) and can be as simple as mapping the words to their lowercased or stemmed form
-        e.g. Capital&rarr;capital (lowercase) or Capitals&rarr;Capit (according to <i>Porter stemmer</i>).
-        We do that in order to make sure we group the words that should be grouped.
-        For simplicity we are applying a lowercase filter only.
-      </p>
+        <h3>Preprocessing</h3>
+        <p>
+          Preprocessing is a prerequisite to training (you could skip it but it's not recommended) and can be as simple as mapping the words to their lowercased or stemmed form
+          e.g. Capital&rarr;capital (lowercase) or Capitals&rarr;Capit (according to <i>Porter stemmer</i>).
+          We do that in order to make sure we group the words that should be grouped.
+          For simplicity we are applying a lowercase filter only.
+        </p>
 
-      <h3>Feature selection</h3>
-      <p>
-        Furthermore, we need to create our dictionary which is going to consist of all the words which we are going to consider.
-        We can keep every single word that appears in the documents but this can lead to various issues
-        including an inflated number of features. Apart from the increased feature space, 'bad' features can also affect our results.
-      </p>
-      <p>
-        Intuitively, words such as 'the', 'is', 'of', etc. are very common and shouldn’t add much value,
-        since they won’t distinguish some topic (in contrast with something more context specific such as “oceanic”).
-        We call these “stopwords” and we completely remove them.
-      </p>
-      <p>
-        A couple of more formal ways to choose the most informative features would be ranking by their
-        <u><a href="https://en.wikipedia.org/wiki/Information_gain_in_decision_trees">Information Gain</a></u>
-        or even perform <u><a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a></u>.
-        These are slightly more advance techniques and are not in the scope of this tutorial.
-      </p>
-      <p>
-        Next step is to apply the lowercase filter to each word and also remove
-        common words 'the', 'of', 'is', 'to', 'on', 'than', 'are' and 'also'. After doing this, we are simply listing each word in the dictionary and their occurrences.
-      </p>
+        <h3>Feature selection</h3>
+        <p>
+          Furthermore, we need to create our dictionary which is going to consist of all the words which we are going to consider.
+          We can keep every single word that appears in the documents but this can lead to various issues
+          including an inflated number of features. Apart from the increased feature space, 'bad' features can also affect our results.
+        </p>
+        <p>
+          Intuitively, words such as 'the', 'is', 'of', etc. are very common and shouldn’t add much value,
+          since they won’t distinguish some topic (in contrast with something more context specific such as “oceanic”).
+          We call these “stopwords” and we completely remove them.
+        </p>
+        <p>
+          A couple of more formal ways to choose the most informative features would be ranking by their
+          <u><a href="https://en.wikipedia.org/wiki/Information_gain_in_decision_trees">Information Gain</a></u>
+          or even perform <u><a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a></u>.
+          These are slightly more advance techniques and are not in the scope of this tutorial.
+        </p>
+        <p>
+          Next step is to apply the lowercase filter to each word and also remove
+          common words 'the', 'of', 'is', 'to', 'on', 'than', 'are' and 'also'. After doing this, we are simply listing each word in the dictionary and their occurrences.
+        </p>
 
-      <h3>Counting</h3>
-      <p>It's time to do the counting part - as mentioned in the beginning, it's going to be counting and multiplying only.
-        We are working with a form of NB called Multinomial NB. All you need to know for now is that this version
-        takes into account the frequencies of each word e.g. that a word appears \(n\) times in a class.
-        It's trivial to create the word/frequency mapping depicted below with basic programming skills and we are going to use it to train our model:
-      </p>
+        <h3>Counting</h3>
+        <p>It's time to do the counting part - as mentioned in the beginning, it's going to be counting and multiplying only.
+          We are working with a form of NB called Multinomial NB. All you need to know for now is that this version
+          takes into account the frequencies of each word e.g. that a word appears \(n\) times in a class.
+          It's trivial to create the word/frequency mapping depicted below with basic programming skills and we are going to use it to train our model:
+        </p>
           </br>
           <style type="text/css">
            .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
@@ -295,7 +296,7 @@
               <td class="tg-yw4l"></td>
             </tr>
           </table>
-
+          <p style="text-align:center;"><i>table 2</i></p>
           </br>
 
           <h3>Training (cont.)</h3>
@@ -314,29 +315,32 @@
             Without doing much, we are half way there!
             How would these data classify the sentence "Widest river in the world" now?
           </p>
-      </p>
-      <h3>Classification</h3>
-      <p>
-        You might be wondering why exactly we calculated these probabilities during the training process. Hopefully it will become much clearer now.
-        As we said we need to classify the sentence "Widest river in the world".
-        First we should apply the exact same filters and feature selection applied at the
-        training data, i.e. not much: lowercase everything and remove stopwords.
-        This preprocessing step would leave us with "widest river world".
-        At last it's time to put Bayes' rule in action!
-      </p>
+        </p>
+        <h3>Classification</h3>
+        <p>
+          You might be wondering why exactly we calculated these probabilities during the training process. Hopefully it will become much clearer now.
+          As we said we need to classify the sentence "Widest river in the world".
+          First we should apply the exact same filters and feature selection applied at the
+          training data, i.e. not much: lowercase everything and remove stopwords.
+          This preprocessing step would leave us with "widest river world".
+          At last it's time to put Bayes' rule in action!
+        </p>
+        <img src="../img/nbclass.jpg" alt="Classification example" height="180" width="450" border="1">
+        <br>
       <p>
         We have already said what needs to be done, which is calculating the probabilities for both categories to occur given this text. Let's get started:
-        Using Bayes' rule, we need to calculate:
-        $${P(geography|'widest,river,world')} = {P('widest,river,world'|geography)P(geography) \over P('widest,river,world')}$$
+        Using Bayes' rule, we need to calculate \(P(geography|'widest,river,world')\) and \(P(economics|'widest,river,world')\):
+        $${P('widest,river,world'|geography)P(geography) \over P('widest,river,world')}$$
         and
-        $${P(economics|'widest,river,world')} = {P('widest,river,world'|economics)P(economics) \over P('widest,river,world')}$$
+        $${P('widest,river,world'|economics)P(economics) \over P('widest,river,world')}$$
         Why is that? Because the question is, what are the odds given the sentence "Widest river in the world" it talks about geography? The answer is simply Bayes' rule.
         You can go back and check, it should make sense.
       </p>
       <p>
         Now, between these two, whatever probability is the highest, this is our winner. We can start working with geography.
-        Note that since we are comparing these probabilities and the denominator is the same with both classes, we can omit it. So it becomes:
-        $$P(geography|'widest,river,world') = {P('widest,river,world'|geography)P(geography)}$$
+        Note that since we are comparing these probabilities and the denominator is the same with both classes, we can omit it.
+        So \(P(geography|'widest,river,world')\) becomes:
+        $${P('widest,river,world'|geography)P(geography)}$$
         or, in Bayesian terms:
         $$posterior=likelihood*prior$$
       </p>
