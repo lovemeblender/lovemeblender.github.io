@@ -139,6 +139,11 @@ vertical-align: middle;
   display: block;
 }
 
+.tableSub {
+    text-align:center;
+    font-size:90%;
+}
+
 .bottomli {
   display: inline;
   list-style-type: none;
