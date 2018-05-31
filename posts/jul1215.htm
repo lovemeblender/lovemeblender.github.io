@@ -1,95 +1,45 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>A day In the life: July 12, 2015</title>
-    <link rel="stylesheet" href="../style.css" media="screen">
-    <link rel="icon" href="../img/fav32.ico" type="image/gif">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119754085-1"></script>
-    <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
+<head>
+  <meta charset="utf-8">
+  <title>A day In the life: July 12, 2015</title>
+  <link rel="stylesheet" href="../style.css" media="screen">
+  <link rel="icon" href="../img/fav32.ico" type="image/gif">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119754085-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-     gtag('config', 'UA-119754085-1');
-    </script>
-  </head>
+  gtag('config', 'UA-119754085-1');
+  </script>
+</head>
 
-  <body>
+<body>
+
+  <div class="wrapper">
+    <header class="header">
+      <a href="../index.htm"><h2><span class=redLetter>A</span><span class=grayLetter> day</span><span class=redLetter> I</span><span class=grayLetter>n the life.</span></h2></a>
+      <h3 class="mainTitle">Computer & Data Science with a pinch of music</h3>
+      <hr>
+    </header>
 
     <div class="content">
-      <a href="../index.htm"><h2><span class=intel>A</span><span class=gray> day</span><span class=intel> I</span><span class=gray>n the life.</span></h2></a>
-      <h3 class="mainTitle">Computer & Data Science with a pinch of music</h3>
+      <div class = "date">July 12, 2015</div>
+      <h3 class="postTitle">A short hashing tale</h3>
+      <h3>Introduction</h3>
+      <p class="postPar">Have you ever wondered what is the distribution of allocations in data structures which make use of hashing, such as hash tables or hash sets, when using different datasets? How often do we have collisions? How many slots remain empty? Is the size of the data structure important?</p>
 
-      <hr>
-      <div class="postBody">
-        <div class = "date">July 12, 2015</div>
-        <h3 class="postTitle">A short hashing tale</h3>
-        <h3>Introduction</h3>
-        <p class="postPar">Have you ever wondered what is the distribution of allocations in data structures which make use of hashing, such as hash tables or hash sets, when using different datasets? How often do we have collisions? How many slots remain empty? Is the size of the data structure important?</p>
+      <p>I will try to indirectly answer these questions with an experimental presentation.</p>
 
-        <p>I will try to indirectly answer these questions with an experimental presentation.</p>
+      <h3>Birthday paradox</h3>
+      <p class="postPar">I am just going to say that the birthday paradox has a really useful conclusion; it tells us when the first collision is going to happen! So, let’s say that we have a hash function that takes an arbitrary number of bits as input and outputs an n-bit hash. Then, we are going to see the first collision after 2<sup><i>n</i>/2</sup> additions in the collection (and if you look at this from a security point of view, an n-bit hash is going to break after 2<sup><i>n</i>/2</sup> evaluations of the hash function). Now say that we’re using the 32-bit CRC function. Then we are expecting to see the first collision after hashing 65536 items. However, when you’re hashing and then inserting in a collection – in case its size is less than 2<sup><i>16</i></sup> in this example – you’d expect to see the first collision earlier since we’re wrapping the integer representation of the hash around the collection’s size – unfortunately we don’t have infinite memory.</p>
 
-        <h3>Birthday paradox</h3>
-        <p class="postPar">I am just going to say that the birthday paradox has a really useful conclusion; it tells us when the first collision is going to happen! So, let’s say that we have a hash function that takes an arbitrary number of bits as input and outputs an n-bit hash. Then, we are going to see the first collision after 2<sup><i>n</i>/2</sup> additions in the collection (and if you look at this from a security point of view, an n-bit hash is going to break after 2<sup><i>n</i>/2</sup> evaluations of the hash function). Now say that we’re using the 32-bit CRC function. Then we are expecting to see the first collision after hashing 65536 items. However, when you’re hashing and then inserting in a collection – in case its size is less than 2<sup><i>16</i></sup> in this example – you’d expect to see the first collision earlier since we’re wrapping the integer representation of the hash around the collection’s size – unfortunately we don’t have infinite memory.</p>
+      <h3>Description</h3>
+      <p class="postPar">I used a data set of 5163 male and female first names, which you can find <a href="http://deron.meranda.us/data/census-derived-all-first.txt">here</a>. I am using a simple integer array to represent whether a cell is empty, occupied, or hosts two or more collided entries. Now my workflow was the following:
 
-        <h3>Description</h3>
-        <p class="postPar">I used a data set of 5163 male and female first names, which you can find <a href="http://deron.meranda.us/data/census-derived-all-first.txt">here</a>. I am using a simple integer array to represent whether a cell is empty, occupied, or hosts two or more collided entries. Now my workflow was the following:
-
-          <ol>
-            <li>Hash each string – I used Java’s hashCode()</li>
-            <li>Wrap the integer representation of the hash around the size of the collection</li>
-            <li>Allocate the corresponding slot</li>
-            <li>Number 0 signifies an empty cell, 1 an occupied cell and 2 or more a collision</li>
-          </ol>
-        </p>
-
-        <h3>Results</h3>
-        <p class="postPar">I experimented with six different sizes of the collection storing the hashed strings. I start at half the total size (2581) and keep adding half the size until I reach three times the size (15489). I can summarise the whole story with the following table – which is sort of self-explanatory:</p>
-
-        <table class="tg">
-          <tbody>
-            <tr>
-              <th class="tg-e3zv">Total</th>
-              <th class="tg-e3zv">Empty</th>
-              <th class="tg-e3zv">Collisions</th>
-            </tr>
-            <tr>
-              <td class="tg-031e">2581</td>
-              <td class="tg-031e">305 (11%)</td>
-              <td class="tg-031e">1552 (60%)</td>
-            </tr>
-            <tr>
-              <td class="tg-031e">5163</td>
-              <td class="tg-031e">1892 (36%)</td>
-              <td class="tg-031e">1348 (26%)</td>
-            </tr>
-            <tr>
-              <td class="tg-031e">7744</td>
-              <td class="tg-031e">3979 (51%)</td>
-              <td class="tg-031e">1128 (14%)</td>
-            </tr>
-            <tr>
-              <td class="tg-031e">10326</td>
-              <td class="tg-031e">6261 (60%)</td>
-              <td class="tg-031e">944 (9%)</td>
-            </tr>
-            <tr>
-              <td class="tg-031e">12907</td>
-              <td class="tg-031e">8627 (66%)</td>
-              <td class="tg-031e">766 (5%)</td>
-            </tr>
-            <tr>
-              <td class="tg-031e">15489</td>
-              <td class="tg-031e">11095 (71%)</td>
-              <td class="tg-031e">683 (4%)</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p class="postPar">Let's take a quick look at the collisions' distribution at Figure 1. There are 2581 slots (x-axis) and the number of collisions is depicted on y-axis.</p>
         <ol>
           <li>Hash each string – I used Java’s hashCode()</li>
           <li>Wrap the integer representation of the hash around the size of the collection</li>
@@ -97,31 +47,79 @@
           <li>Number 0 signifies an empty cell, 1 an occupied cell and 2 or more a collision</li>
         </ol>
       </p>
-      <img src="../img/figure-1.png" alt="Figure 1" width="80%" height="60%" >
 
-      <p class="postPar">Figure 2 depicts the percentage of the slots that remained unallocated (x-axis) and the percentage of the slots where we noted collisions (y-axis). Each dot on the curve is a different table size as described earlier. Essentially this is the graphical representation of the table above.</p>
+      <h3>Results</h3>
+      <p class="postPar">I experimented with six different sizes of the collection storing the hashed strings. I start at half the total size (2581) and keep adding half the size until I reach three times the size (15489). I can summarise the whole story with the following table – which is sort of self-explanatory:</p>
 
-      <img src="../img/figure-2.png" alt="Figure 2" width="80%" height="60%" >
-          </br></br>
-          <p class="lastPar">Snip, snap, snout, this tale's told out.</p>
+      <table class="tg">
+        <tbody>
+          <tr>
+            <th class="tg-e3zv">Total</th>
+            <th class="tg-e3zv">Empty</th>
+            <th class="tg-e3zv">Collisions</th>
+          </tr>
+          <tr>
+            <td class="tg-031e">2581</td>
+            <td class="tg-031e">305 (11%)</td>
+            <td class="tg-031e">1552 (60%)</td>
+          </tr>
+          <tr>
+            <td class="tg-031e">5163</td>
+            <td class="tg-031e">1892 (36%)</td>
+            <td class="tg-031e">1348 (26%)</td>
+          </tr>
+          <tr>
+            <td class="tg-031e">7744</td>
+            <td class="tg-031e">3979 (51%)</td>
+            <td class="tg-031e">1128 (14%)</td>
+          </tr>
+          <tr>
+            <td class="tg-031e">10326</td>
+            <td class="tg-031e">6261 (60%)</td>
+            <td class="tg-031e">944 (9%)</td>
+          </tr>
+          <tr>
+            <td class="tg-031e">12907</td>
+            <td class="tg-031e">8627 (66%)</td>
+            <td class="tg-031e">766 (5%)</td>
+          </tr>
+          <tr>
+            <td class="tg-031e">15489</td>
+            <td class="tg-031e">11095 (71%)</td>
+            <td class="tg-031e">683 (4%)</td>
+          </tr>
+        </tbody>
+      </table>
 
-      </div>
-    </div>
+      <p class="postPar">Let's take a quick look at the collisions' distribution at Figure 1. There are 2581 slots (x-axis) and the number of collisions is depicted on y-axis.</p>
+      <ol>
+        <li>Hash each string – I used Java’s hashCode()</li>
+        <li>Wrap the integer representation of the hash around the size of the collection</li>
+        <li>Allocate the corresponding slot</li>
+        <li>Number 0 signifies an empty cell, 1 an occupied cell and 2 or more a collision</li>
+      </ol>
+    </p>
+    <img src="../img/figure-1.png" alt="Figure 1" width="80%" height="60%" >
 
-    <div
-      class="just-comments"
-      data-apikey="9fa1f1f5-2ca0-4d89-bb34-b78c48fafcb1"
-      data-hideattribution="true">
-    </div>
-    <script async src="https://just-comments.com/w.js"></script>
+    <p class="postPar">Figure 2 depicts the percentage of the slots that remained unallocated (x-axis) and the percentage of the slots where we noted collisions (y-axis). Each dot on the curve is a different table size as described earlier. Essentially this is the graphical representation of the table above.</p>
 
-    <div class="footer">
-      <ul class="bottomlinks">
-        <li class="bottomli"><a href="https://github.com/lovemeblender"><img src="../img/gb-64.png" alt="Github" height="30" width="30"></a></li>
-        <li class="bottomli"><a href="http://uk.linkedin.com/in/mdespotopoulos/"><img src="../img/in-34.png" alt="LinkedIn" height="26" width="30"></a></li>
-        <li class="bottomli"><a href="https://twitter.com/mdespotopoulos"><img src="../img/twitter.png" alt="Twitter" height="30" width="30"></a></li>
-      </ul>
-    </div>
-
-  </body>
+    <img src="../img/figure-2.png" alt="Figure 2" width="80%" height="60%" >
+  </br></br>
+  <p class="lastPar">Snip, snap, snout, this tale's told out.</p>
+  <div
+  class="just-comments"
+  data-apikey="9fa1f1f5-2ca0-4d89-bb34-b78c48fafcb1"
+  data-hideattribution="true">
+</div>
+<script async src="https://just-comments.com/w.js"></script>
+</div> <!-- content -->
+<div class="footer">
+  <ul class="bottomlinks">
+    <li class="bottomli"><a href="https://github.com/lovemeblender"><img src="../img/gb-64.png" alt="Github" height="30" width="30"></a></li>
+    <li class="bottomli"><a href="http://uk.linkedin.com/in/mdespotopoulos/"><img src="../img/in-34.png" alt="LinkedIn" height="26" width="30"></a></li>
+    <li class="bottomli"><a href="https://twitter.com/mdespotopoulos"><img src="../img/twitter.png" alt="Twitter" height="30" width="30"></a></li>
+  </ul>
+</div>
+</div> <!--wrapper -->
+</body>
 </html>
