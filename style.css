@@ -228,6 +228,12 @@ p {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .header {
+    width: 95%;
+  }
+  .content {
+    width: 85%;
+  }
 }
 
 /*
@@ -235,7 +241,7 @@ p {
 ##Screen = B/w 481px to 767px
 */
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media only screen and (min-width: 481px) and (max-width: 767px) {
   .body {
     line-height:1.25em;
     font-size: 1em;
@@ -256,13 +262,12 @@ p {
     font-size:1.125em;
     line-height:1.11111111em;
   }
-  .push {
-    content: "";
-    display: block;
-    margin-bottom: -15%
+  
+  .header {
+    width: 95%;
   }
   .content {
-    width: 100%
+    width: 70%;
   }
 }
 
@@ -271,7 +276,7 @@ p {
 ##Screen = B/w 320px to 479px
 */
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .body {
     line-height:1.25em;
     font-size: 1em;
@@ -292,12 +297,35 @@ p {
     font-size:1.125em;
     line-height:1.11111111em;
   }
-  .push {
-    content: "";
-    display: block;
-    margin-bottom: -15%
+  .header {
+    width: 95%;
   }
   .content {
-    width: 100%
+    width: 70%;
   }
+}
+
+@media only screen and (max-width: 319px) {
+  .header {
+    width: 95%;
+  }
+  .content {
+    width: 90%;
+  }
+}
+
+@media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    /* Retina styles here */
+    .header {
+      width: 95%;
+    }
+    .content {
+      width: 90%;
+    }
 }
