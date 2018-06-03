@@ -144,9 +144,16 @@ p {
   flex-shrink: 0;
 }
 
-.image {
-  width:85%;
-  height:350px;
+.imageMedium {
+  width:63%;
+  height:310px;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.imageSmall {
+  width:60%;
+  height:260px;
   border: 1px solid #000;
   border-radius: 4px;
 }
@@ -191,141 +198,301 @@ p {
   width: 70%;
 }
 
+/* Generic table */
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:12px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:12px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+
+/* A short hashing tale */
 .tg .tg-xvrm{font-weight:bold;font-family:serif !important;}
 .tg .tg-54if{font-weight:bold;font-size:100%;font-family:serif !important;}
 .tg .tg-4eph{background-color:#f9f9f9}
 
-/*
-##Device = Desktops
-##Screen = 1281px to higher resolution desktops
-*/
+/* Naive Bayes table 1 */
+.tg .tg-yw4l{vertical-align:top}
+.tg .tg-b7b8{background-color:#f9f9f9;vertical-align:top}
 
-@media (min-width: 1281px) {
+/* Naive Bayes table 2 */
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-dc35{background-color:#f9f9f9;border-color:inherit;vertical-align:top}
+.tg .tg-us36{border-color:inherit;vertical-align:top}
+.tg .tg-b7b8{background-color:#f9f9f9;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
 }
 
-/*
-##Device = Laptops, Desktops
-##Screen = B/w 1025px to 1280px
-*/
-
-@media (min-width: 1025px) and (max-width: 1280px) {
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+/* Styles */
 }
 
-/*
-##Device = Tablets, Ipads (portrait)
-##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) {
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+/* Styles */
 }
 
-/*
-##Device = Tablets, Ipads (landscape)
-##Screen = B/w 768px to 1024px
-*/
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+}
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+.header {
+  width: 95%;
+}
+.content {
+  width: 76%;
+}
+.footer {
+  width: 200px;x
+}
+.mainTitle {
+  font-size:83%;
+}
+}
+/**********
+iPad 3
+**********/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+.header {
+  width: 95%;
+}
+.content {
+  width: 80%;
+}
+.footer {
+  width: 200px;
+}
+.gitlogo,
+.twitterlogo {
+  width: 40px;
+  height: 40px;
+}
+.linkedinlogo {
+  width: 40px;
+  height: 36px;
+}
+.mainTitle {
+  font-size:80%;
+}
+}
+
+/* iPhone 5 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.header {
+  width: 95%;
+}
+.content {
+  width: 80%;
+}
+.footer {
+  width: 200px;
+}
+.gitlogo,
+.twitterlogo {
+  width: 40px;
+  height: 40px;
+}
+.linkedinlogo {
+  width: 40px;
+  height: 36px;
+}
+.mainTitle {
+  font-size:70%;
+}
+}
+
+/* iPhone 6 ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+
+  .bottomli {
+    font-size: 120%;
+  }
+  .footer {
+    width: 200px;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+  /* Styles */
   .header {
     width: 95%;
   }
   .content {
-    width: 85%;
+    width: 80%;
+  }
+  .footer {
+    width: 200px;
+  }
+  .gitlogo,
+  .twitterlogo {
+    width: 40px;
+    height: 40px;
+  }
+  .linkedinlogo {
+    width: 40px;
+    height: 36px;
+  }
+  .mainTitle {
+    font-size:84%;
   }
 }
 
-/*
-##Device = Low Resolution Tablets, Mobiles (Landscape)
-##Screen = B/w 481px to 767px
-*/
+/* iPhone 6+ ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
 
-@media only screen and (min-width: 481px) and (max-width: 767px) {
-  .body {
-    line-height:1.25em;
-    font-size: 1em;
-  }
-  .h1 {
-    font-size: 2em;
-    line-height:1.25em;
-  }
-  .h2 {
-    font-size:1.625em;
-    line-height:1.15384615em;
-  }
-  .h3 {
-    font-size:1.375em;
-    line-height:1.13636364em;
-  }
-  .h4 {
-    font-size:1.125em;
-    line-height:1.11111111em;
-  }
-  
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.header {
+  width: 95%;
+}
+.content {
+  width: 80%;
+}
+.footer {
+  width: 200px;
+}
+.gitlogo,
+.twitterlogo {
+  width: 40px;
+  height: 40px;
+}
+.linkedinlogo {
+  width: 40px;
+  height: 36px;
+}
+.mainTitle {
+  font-size:83%;
+}
+}
+
+/* Samsung Galaxy S3 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+.header {
+  width: 95%;
+}
+.content {
+  width: 80%;
+}
+.footer {
+  width: 200px;
+}
+.gitlogo,
+.twitterlogo {
+  width: 40px;
+  height: 40px;
+}
+.linkedinlogo {
+  width: 40px;
+  height: 36px;
+}
+.mainTitle {
+  font-size:83%;
+}
+}
+
+/* Samsung Galaxy S4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+.header {
+  width: 95%;
+}
+.content {
+  width: 80%;
+}
+.footer {
+  width: 200px;
+}
+.gitlogo,
+.twitterlogo {
+  width: 40px;
+  height: 40px;
+}
+.linkedinlogo {
+  width: 40px;
+  height: 36px;
+}
+.mainTitle {
+  font-size:83%;
+}
+}
+
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
   .header {
     width: 95%;
   }
   .content {
-    width: 70%;
+    width: 80%;
   }
-}
-
-/*
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
-
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  .body {
-    line-height:1.25em;
-    font-size: 1em;
+  .footer {
+    width: 200px;
   }
-  .h1 {
-    font-size: 2em;
-    line-height:1.25em;
+  .gitlogo,
+  .twitterlogo {
+    width: 40px;
+    height: 40px;
   }
-  .h2 {
-    font-size:1.625em;
-    line-height:1.15384615em;
+  .linkedinlogo {
+    width: 40px;
+    height: 36px;
   }
-  .h3 {
-    font-size:1.375em;
-    line-height:1.13636364em;
+  .mainTitle {
+    font-size:83%;
   }
-  .h4 {
-    font-size:1.125em;
-    line-height:1.11111111em;
-  }
-  .header {
-    width: 95%;
-  }
-  .content {
-    width: 70%;
-  }
-}
-
-@media only screen and (max-width: 319px) {
-  .header {
-    width: 95%;
-  }
-  .content {
-    width: 90%;
-  }
-}
-
-@media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
-    /* Retina styles here */
-    .header {
-      width: 95%;
-    }
-    .content {
-      width: 90%;
-    }
 }
