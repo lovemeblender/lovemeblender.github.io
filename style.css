@@ -144,16 +144,23 @@ p {
   flex-shrink: 0;
 }
 
-.imageMedium {
-  width:63%;
-  height:310px;
+.imageSmall {
+  width:60%;
+  height:260px;
   border: 1px solid #000;
   border-radius: 4px;
 }
 
-.imageSmall {
-  width:60%;
-  height:260px;
+.imageMedium {
+  width:66%;
+  height:320px;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.imageLarge {
+  width:72%;
+  height:340px;
   border: 1px solid #000;
   border-radius: 4px;
 }
