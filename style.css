@@ -145,22 +145,22 @@ p {
 }
 
 .imageSmall {
-  width:60%;
-  height:260px;
+  width:50%;
+  height:30%;
   border: 1px solid #000;
   border-radius: 4px;
 }
 
 .imageMedium {
   width:66%;
-  height:320px;
+  height:50%;
   border: 1px solid #000;
   border-radius: 4px;
 }
 
 .imageLarge {
   width:72%;
-  height:340px;
+  height:40%;
   border: 1px solid #000;
   border-radius: 4px;
 }
