@@ -38,16 +38,16 @@
             how to take it to the next level.
             It assumes basic knowledge of probability theory.
             <i>Part 1</i> presents the basic ideas of the algorithm
-            using a form of Naive Bayes called Multinomial Naive Bayes.
+            using a form of Naive Bayes called <i><b>Multinomial Naive Bayes</b></i>.
             In <i>part 2</i> we are going to take it a bit further: briefly present other
-            forms such as Multivariate Bernoulli Naive Bayes and some more exotic but still useful variants.
+            forms such as <i><b>Multivariate Bernoulli Naive Bayes</b></i> and some more exotic but still useful variants.
           </p>
 
           <h3>tl;dr</h3>
           <p>Naive Bayes is a generative classifier which is really good at classifying text.
             Its most popular application is the spam filter.
             It is based (in fact this is all it is along with some tricks) on
-            Bayes rule, so let’s start from there. Feel free to skip all the math and
+            Bayes' rule, so let’s start from there. Feel free to skip all the math and
             go directly to the practical part but they're not that hard and they
             will help you get a deeper understanding of what you are doing.
           </p>
@@ -67,7 +67,7 @@
             Now it's a good time to say that not all events are made dependent.
             For example, the outcome of tossing a dice couldn't care less about the outcome of
             any previous tosses. If the first toss is event A and the second toss is event B, then
-            we say that A and B are independent. In this case:
+            we say that A and B are <i><b>independent</b></i>. In this case:
             $$P(B|A)={P(B)}$$
           </p>
           <img class="imageSmall" src="../img/nbcond.jpg" alt="Conditional Probability">
@@ -397,7 +397,7 @@
   <li>Apply preprocessing to the training examples.</li>
   <li><b>Training</b>: create a word to frequency mapping. This can be implemented using a <i>Dictionary</i> in most programming languages.
     Use Laplace smoothing.</li>
-    <li><b>Classify</b>: having an incoming sentence, use the dictionary from step 2. Don't forget to apply <i>Laplace smoothing</i> for any previously unseen words.
+    <li><b>Classification</b>: having an incoming sentence, use the dictionary from step 2. Don't forget to apply <i>Laplace smoothing</i> for any previously unseen words.
       Use Bayes' rule to put it all together and calculate the posteriors. The class with the highest probability wins.</li>
     </ol>
 
