@@ -8,7 +8,7 @@ html, body {
   padding:0;
   height: 100%;
   font-family: "Palatino", "Times", "Lucida Grande", serif;
-  line-height: 160%;
+  line-height: 150%;
   letter-spacing:0.5px;
   background-color: #FFFFFF;
 }
@@ -58,7 +58,7 @@ h3 {
 }
 
 h4 {
-    margin-bottom: 2px;
+  margin-bottom: 2px;
 }
 
 .mainTitle {
@@ -128,6 +128,7 @@ p {
 }
 
 .content {
+  font-size: 120%;
   margin-right: auto;
   margin-left: auto;
   padding-left: 20px;
@@ -317,7 +318,7 @@ iPad 3
     width: 95%;
   }
   .content {
-    width: 80%;
+    width: 85%;
   }
   .footer {
     width: 200px;
@@ -350,7 +351,7 @@ iPad 3
     width: 95%;
   }
   .content {
-    width: 80%;
+    width: 85%;
   }
   .footer {
     width: 200px;
@@ -393,7 +394,7 @@ iPad 3
     width: 95%;
   }
   .content {
-    width: 80%;
+    width: 85%;
   }
   .footer {
     width: 200px;
@@ -426,7 +427,7 @@ iPad 3
     width: 95%;
   }
   .content {
-    width: 80%;
+    width: 85%;
   }
   .footer {
     width: 200px;
@@ -459,7 +460,7 @@ iPad 3
     width: 95%;
   }
   .content {
-    width: 80%;
+    width: 85%;
   }
   .footer {
     width: 200px;
@@ -492,7 +493,7 @@ iPad 3
     width: 95%;
   }
   .content {
-    width: 80%;
+    width: 85%;
   }
   .footer {
     width: 200px;
@@ -525,7 +526,7 @@ iPad 3
     width: 95%;
   }
   .content {
-    width: 80%;
+    width: 85%;
   }
   .footer {
     width: 200px;
