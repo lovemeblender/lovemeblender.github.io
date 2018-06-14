@@ -215,6 +215,7 @@ p {
   background-color: #e6e6e6;
   padding: 1%;
   margin: 1%;
+  overflow-wrap: break-word;
 }
 
 .just-comments {
