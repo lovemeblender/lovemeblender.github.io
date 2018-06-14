@@ -62,7 +62,7 @@ h4 {
 }
 
 .mainTitle {
-  font-size: 95%;
+  font-size: 98%;
   color: #585757;
   font-family: "Trebuchet MS", "Times New Roman";
   margin-top: -1%;
@@ -281,7 +281,7 @@ p {
     width: 200px;x
   }
   .mainTitle {
-    font-size:83%;
+    font-size:88%;
   }
   html {
     -webkit-overflow-scrolling: touch;
@@ -333,7 +333,7 @@ iPad 3
     height: 36px;
   }
   .mainTitle {
-    font-size:80%;
+    font-size:88%;
   }
   html {
     -webkit-overflow-scrolling: touch;
@@ -366,7 +366,7 @@ iPad 3
     height: 36px;
   }
   .mainTitle {
-    font-size:70%;
+    font-size:85%;
   }
   html {
     -webkit-overflow-scrolling: touch;
@@ -382,6 +382,9 @@ iPad 3
   }
   .footer {
     width: 200px;
+  }
+  .mainTitle {
+    font-size:88%;
   }
   html {
     -webkit-overflow-scrolling: touch;
@@ -409,7 +412,7 @@ iPad 3
     height: 36px;
   }
   .mainTitle {
-    font-size:84%;
+    font-size:88%;
   }
   html {
     -webkit-overflow-scrolling: touch;
@@ -442,7 +445,7 @@ iPad 3
     height: 36px;
   }
   .mainTitle {
-    font-size:83%;
+    font-size:88%;
   }
   html {
     -webkit-overflow-scrolling: touch;
@@ -475,7 +478,7 @@ iPad 3
     height: 36px;
   }
   .mainTitle {
-    font-size:83%;
+    font-size:88%;
   }
   html {
     -webkit-overflow-scrolling: touch;
@@ -508,7 +511,7 @@ iPad 3
     height: 36px;
   }
   .mainTitle {
-    font-size:83%;
+    font-size:88%;
   }
   html {
     -webkit-overflow-scrolling: touch;
@@ -541,7 +544,7 @@ iPad 3
     height: 36px;
   }
   .mainTitle {
-    font-size:83%;
+    font-size:88%;
   }
   html {
     -webkit-overflow-scrolling: touch;
