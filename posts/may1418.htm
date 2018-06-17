@@ -3,9 +3,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>A day In life: May 14, 2018</title>
-  <link rel="stylesheet" href="../style.css" media="screen">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+
+  <title>A day In life: June 13, 2018</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  CommonHTML: { linebreaks: { automatic: true }, scale: 70 },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../style.css" media="screen">
+  <link rel="icon" href="./img/fav32.ico" type="image/gif">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119754085-1"></script>
   <script>
@@ -14,322 +33,339 @@
   gtag('js', new Date());
   gtag('config', 'UA-119754085-1');
   </script>
-  <script type="text/javascript"
-    src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js"
-    data-dojo-config="usePlainJson: true, isDebug: false">
-  </script>
-  <script type="text/javascript">
-    require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"0949a3f68a174be9eb47e487f","lid":"2597c8fdeb"}) })
+  <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js"
+  data-dojo-config="usePlainJson: true, isDebug: false"></script><script
+  type="text/javascript">
+  require(["mojo/signup-forms/Loader"],
+  function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"0949a3f68a174be9eb47e487f","lid":"2597c8fdeb"}) })
   </script>
   <!-- Hotjar Tracking Code -->
   <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:918288,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-  <link rel="icon" href="../img/fav32.ico" type="image/gif">
+  (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:918288,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
 </head>
 
 <body>
-  <div class="wrapper">
-    <header class="header">
-      <a href="../index.htm">
-        <h2>
-          <span class=redLetter>A</span><span class=grayLetter> day</span><span class=redLetter> I</span><span class=grayLetter>n life.</span></h2></a>
-          <h3 class="mainTitle">Computer & Data Science with a pinch of music</h3>
-          <hr>
-        </header>
-        <div class="content">
-          <div class = "date">May 14, 2018</div>
-          <h3 class="postTitle">Machine Learning for the Masses: Naive Bayes (pt.1)</h3>
-          <h3>Introduction</h3>
-          <p>Machine learning doesn’t have to be or seem complicated. It can get as
-            straight-forward as counting and multiplying, which is the case with Naive Bayes.
-            This tutorial aims to offer a mostly non-academic (without sacrificing
-            mathematical rigor) overview of Naive Bayes along with references on
-            how to take it to the next level.
-            It assumes basic knowledge of probability theory.
-            <i>Part 1</i> presents the basic ideas of the algorithm
-            using a form of Naive Bayes called <i><b>Multinomial Naive Bayes</b></i>.
-            In <i>part 2</i> we are going to take it a bit further: briefly present other
-            forms such as <i><b>Multivariate Bernoulli Naive Bayes</b></i> and some more exotic but still useful variants.
-          </p>
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <!--<a class="text-muted" href="https://mailchi.mp/189317a0a55f/adayinlife">Subscribe</a>-->
+        </div>
+        <div class="col-4 text-center">
+          <img class="logo img-fluid" src="../img/logo-desktop.png" alt="logo" border="1">
+          <!--<a class="blog-header-logo text-dark" href="#"><span class=redLetter>A</span> day <span class=redLetter>I</span>n life</a>-->
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <!--
+          <a class="text-muted" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      -->
+    </div>
+  </div>
+</header>
 
-          <h3>tl;dr</h3>
-          <p>Naive Bayes is a generative classifier which is really good at classifying text.
-            Its most popular application is the spam filter.
-            It is based (in fact this is all it is along with some tricks) on
-            Bayes' rule, so let’s start from there. Feel free to skip all the math and
-            go directly to the practical part but they're not that hard and they
-            will help you get a deeper understanding of what you are doing.
-          </p>
-
-          <h3>Conditional probability</h3>
-          <p>
-            A key concept to a bottom up explaination of Bayes' rule and NB is conditional probability.
-            We usually write it as \(P(A|B)\), which can be read as: the probability of A given B has occurred.
-            In general the formula is:
-            $$P(A|B) = {P(A,B) \over P(B)} = {P(B,A) \over P(A)}$$
-
-            Note that the conditional probability can be easily found with the help of a contingency table
-            and it’s the joint probability of the two events divided by the marginal probability.
-            Exactly what the formula above states.
-          </p>
-          <p>
-            Now it's a good time to say that not all events are made dependent.
-            For example, the outcome of tossing a dice couldn't care less about the outcome of
-            any previous tosses. If the first toss is event A and the second toss is event B, then
-            we say that A and B are <i><b>independent</b></i>. In this case:
-            $$P(B|A)={P(B)}$$
-          </p>
-          <img class="imageSmall" src="../img/nbcond.jpg" alt="Conditional Probability">
-          <p class="tableSub"><i>image 1 - Bayes' rule</i></p>
-          <br>
-          <h3>Bayes' rule</h3>
-          <p>
-            Feel free to skip this and go directly to the actual rule, but it's
-            super easy to derive it.
-
-            Taking the formula for the conditional probability and solving
-            for marginal probability, we are having the following:
-            $${P(A|B)P(B)=P(A,B)}$$
-            If we swap A and B, we get:
-
-            $${P(B|A)P(A)=P(B,A)}$$
-            And finally, since \(P(A,B)=P(B,A)\):
-            $${P(A|B)P(B)=P(B|A)P(A)}$$
-            Solving for \(P(A|B)\), Bayes' rule:
-            $$P(A|B)={P(B|A)P(A) \over P(B)}$$
-
-            In Bayesian terms, \(P(A|B)\) is called <i>posterior probability</i>, \(P(B|A)\) <i>likelihood</i>, \(P(A)\) <i>prior probability</i> and \(P(B)\) <i>marginal probability</i>.
-          </p>
-
-          <h3>Training</h3>
-          <p>
-            NB is a supervised algorithm, therefore we need some kind of training examples to get started.
-            Assume we were given some manually classified sentences (i.e. some people given a sentence marked it with
-            the class he/she thinks is more relevant) as geography or economics. In reality these seven training examples
-            are by no means sufficient to make NB work properly.
-          </p>
-        </br>
-        <style type="text/css">
-        .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
-        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#fff;}
-        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#f0f0f0;}
-
-        </style>
-        <table class="tg">
-          <tr>
-            <th class="tg-yw4l">Text</th>
-            <th class="tg-yw4l">Class</th>
-          </tr>
-          <tr>
-            <td class="tg-b7b8">Capital land and labor are the three factors of production</td>
-            <td class="tg-b7b8">Economics</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">Athens is the capital of Greece</td>
-            <td class="tg-yw4l">Geography</td>
-          </tr>
-          <tr>
-            <td class="tg-b7b8">The wealth of nations</td>
-            <td class="tg-b7b8">Economics</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">The Amazon river is also home to the piranha</td>
-            <td class="tg-yw4l">Geography</td>
-          </tr>
-          <tr>
-            <td class="tg-b7b8">Nile is the longest river on earth</td>
-            <td class="tg-b7b8">Geography</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">The Process of Production of Capital</td>
-            <td class="tg-yw4l">Economics</td>
-          </tr>
-          <tr>
-            <td class="tg-b7b8">Australia is wider than the moon</td>
-            <td class="tg-b7b8">Geography</td>
-          </tr>
-        </table>
-        <p class="tableSub"><i>table 1 - training examples</i></p>
-        <br>
-        <p>
-          Now suppose you were give the sentence: "Widest river in the world".
-          Before classifying it as either geography or economics we need to
-          perform the training process using the training examples listed above.
-          We can describe training in two steps:
-          <ol>
-            <li>
-              For each word \(w\) in the dictionary (i.e. all words in the training examples) and for each class \(c\), calculate the following probability \(P(w|c)\).
-              These are called <i>likelihood</i> in Bayesian terms.
-            </li>
-            <li>
-              For each class \(c\), calculate the probability \(P(c)\). This is the <i>prior</i> in Bayesian terms.
-            </li>
-          </ol>
-        </p>
-        <p>
-          We will see how to calculate these after presenting a quick but important step: <i>preprocessing</i>.
-        </p>
-      </p>
-
-      <h3>Preprocessing</h3>
-      <p>
-        Preprocessing is a prerequisite to training (you could skip it but it's not recommended) and can be as simple as mapping the words to their lowercased or stemmed form
-        e.g. Capital&rarr;capital (lowercase) or Capitals&rarr;Capit (according to <i>Porter stemmer</i>).
-        We do that in order to make sure we group the words that should be grouped.
-        For simplicity we are applying a lowercase filter only.
-      </p>
-
-      <h3>Feature selection</h3>
-      <p>
-        Furthermore, we need to create our dictionary which is going to consist of all the words which we are going to consider.
-        We can keep every single word that appears in the documents but this can lead to various issues
-        including an inflated number of features. Apart from the increased feature space, 'bad' features can also affect our results.
-      </p>
-      <p>
-        Intuitively, words such as 'the', 'is', 'of', etc. are very common and shouldn’t add much value,
-        since they won’t distinguish some topic (in contrast with something more context specific such as “oceanic”).
-        We call these “stopwords” and we completely remove them.
-      </p>
-      <p>
-        A couple of more formal ways to choose the most informative features would be ranking by their
-        <u><a href="https://en.wikipedia.org/wiki/Information_gain_in_decision_trees">Information Gain</a></u>
-        or even perform <u><a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a></u>.
-        These are slightly more advance techniques and are not in the scope of this tutorial.
-      </p>
-      <p>
-        Next step is to apply the lowercase filter to each word and also remove
-        common words 'the', 'of', 'is', 'to', 'on', 'than', 'are' and 'also'. After doing this, we are simply listing each word in the dictionary and their occurrences.
-      </p>
-
-      <img class=imageLarge src="../img/nbtrain.jpg" alt="Training example" border="1">
-      <p class="tableSub"><i>image 2 - training example</i></p>
-
-      <h3>Counting</h3>
-      <p>It's time to do the counting part - as mentioned in the beginning, it's going to be counting and multiplying only.
-        We are working with a form of NB called Multinomial NB. All you need to know for now is that this version
-        takes into account the frequencies of each word e.g. that a word appears \(n\) times in a class.
-        It's trivial to create the word/frequency mapping depicted below with basic programming skills and we are going to use it to train our model:
-      </p>
-    </br>
-    <table class="tg">
-      <tr>
-        <th class="tg-baqh" colspan="2">Geography</th>
-        <th class="tg-baqh" colspan="2">Economics</th>
-      </tr>
-      <tr>
-        <td class="tg-dc35">Word</td>
-        <td class="tg-dc35">Frequency</td>
-        <td class="tg-b7b8">Word</td>
-        <td class="tg-b7b8">Frequency</td>
-      </tr>
-      <tr>
-        <td class="tg-us36">river</td>
-        <td class="tg-us36">2</td>
-        <td class="tg-yw4l">production</td>
-        <td class="tg-yw4l">2</td>
-      </tr>
-      <tr>
-        <td class="tg-dc35">wider</td>
-        <td class="tg-dc35">1</td>
-        <td class="tg-b7b8">capital</td>
-        <td class="tg-b7b8">2</td>
-      </tr>
-      <tr>
-        <td class="tg-us36">piranha</td>
-        <td class="tg-us36">1</td>
-        <td class="tg-yw4l">wealth</td>
-        <td class="tg-yw4l">1</td>
-      </tr>
-      <tr>
-        <td class="tg-dc35">nile<br></td>
-        <td class="tg-dc35">1</td>
-        <td class="tg-b7b8">three</td>
-        <td class="tg-b7b8">1</td>
-      </tr>
-      <tr>
-        <td class="tg-us36">moon</td>
-        <td class="tg-us36">1</td>
-        <td class="tg-yw4l">process</td>
-        <td class="tg-yw4l">1</td>
-      </tr>
-      <tr>
-        <td class="tg-dc35">longest</td>
-        <td class="tg-dc35">1</td>
-        <td class="tg-b7b8">nations</td>
-        <td class="tg-b7b8">1</td>
-      </tr>
-      <tr>
-        <td class="tg-us36">home</td>
-        <td class="tg-us36">1</td>
-        <td class="tg-yw4l">land</td>
-        <td class="tg-yw4l">1</td>
-      </tr>
-      <tr>
-        <td class="tg-dc35">greece</td>
-        <td class="tg-dc35">1</td>
-        <td class="tg-b7b8">labor</td>
-        <td class="tg-b7b8">1</td>
-      </tr>
-      <tr>
-        <td class="tg-us36">earth</td>
-        <td class="tg-us36">1</td>
-        <td class="tg-yw4l">factors</td>
-        <td class="tg-yw4l">1</td>
-      </tr>
-      <tr>
-        <td class="tg-dc35">capital</td>
-        <td class="tg-dc35">1</td>
-        <td class="tg-b7b8"></td>
-        <td class="tg-b7b8"></td>
-      </tr>
-      <tr>
-        <td class="tg-us36">australia</td>
-        <td class="tg-us36">1</td>
-        <td class="tg-yw4l"></td>
-        <td class="tg-yw4l"></td>
-      </tr>
-      <tr>
-        <td class="tg-dc35">athens</td>
-        <td class="tg-dc35">1</td>
-        <td class="tg-b7b8"></td>
-        <td class="tg-b7b8"></td>
-      </tr>
-      <tr>
-        <td class="tg-us36">amazon</td>
-        <td class="tg-us36">1</td>
-        <td class="tg-yw4l"></td>
-        <td class="tg-yw4l"></td>
-      </tr>
-    </table>
-    <p class="tableSub"><i>table 2 - counting word frequencies</i></p>
-  </br>
-
-  <h3>Training (cont.)</h3>
-  <p>
-    Now that we are having the frequencies for each word in each class we can resume the training process. We started doing it in two steps so let's take it from there:
-    <ol>
-      <li>If you scroll up, this step requires doing a calculation for every word in the dictionary and for every class.
-        It's exactly the same work for any word and any class so let's do it for a single word and class. I randomly choose the word <i>river</i> and class <i>geography</i>:
-        $$P(river|geography)={count(river, geography) \over count(geography)}= {2 \over 13}$$
-        In words, that is the occurrences of word <i>river</i> in the geography class divided by the number of all words in geography class.
-      </li>
-      <li>The prior is even easier, it's just the number of words in geography class divided by the number of the words in the dictionary. That is:
-        $$P(geography)={count(geography) \over count(vocabulary)}={13 \over 21}$$
-      </li>
-    </ol>
-    Without doing much, we are half way there!
-    How would these data classify the sentence "Widest river in the world" now?
+<div class="nav-scroller py-1 mb-2">
+  <nav class="nav d-flex justify-content-between">
+    <a class="p-2 text-muted" href="../indek.htm">Home</a>
+    <a class="p-2 text-muted" href="../indek.htm">RSS</a>
+    <a class="p-2 text-muted" href="https://mailchi.mp/189317a0a55f/adayinlife">Subscribe</a>
+  </nav>
+</div>
+<div class="content">
+  <div class = "date">May 14, 2018</div>
+  <h3 class="postTitle">Machine Learning for the Masses: Naive Bayes (pt.1)</h3>
+  <h3 class="paragraphTitle">Introduction</h3>
+  <p>Machine learning doesn’t have to be or seem complicated. It can get as
+    straight-forward as counting and multiplying, which is the case with Naive Bayes.
+    This tutorial aims to offer a mostly non-academic (without sacrificing
+    mathematical rigor) overview of Naive Bayes along with references on
+    how to take it to the next level.
+    It assumes basic knowledge of probability theory.
+    <i>Part 1</i> presents the basic ideas of the algorithm
+    using a form of Naive Bayes called <i><b>Multinomial Naive Bayes</b></i>.
+    In <i>part 2</i> we are going to take it a bit further: briefly present other
+    forms such as <i><b>Multivariate Bernoulli Naive Bayes</b></i> and some more exotic but still useful variants.
   </p>
+
+  <h3 class="paragraphTitle">tl;dr</h3>
+  <p>Naive Bayes is a generative classifier which is really good at classifying text.
+    Its most popular application is the spam filter.
+    It is based (in fact this is all it is along with some tricks) on
+    Bayes' rule, so let’s start from there. Feel free to skip all the math and
+    go directly to the practical part but they're not that hard and they
+    will help you get a deeper understanding of what you are doing.
+  </p>
+
+  <h3 class="paragraphTitle">Conditional probability</h3>
+  <p>
+    A key concept to a bottom up explaination of Bayes' rule and NB is conditional probability.
+    We usually write it as \(P(A|B)\), which can be read as: the probability of A given B has occurred.
+    In general the formula is:
+    $$P(A|B) = {P(A,B) \over P(B)} = {P(B,A) \over P(A)}$$
+
+    Note that the conditional probability can be easily found with the help of a contingency table
+    and it’s the joint probability of the two events divided by the marginal probability.
+    Exactly what the formula above states.
+  </p>
+  <p>
+    Now it's a good time to say that not all events are made dependent.
+    For example, the outcome of tossing a dice couldn't care less about the outcome of
+    any previous tosses. If the first toss is event A and the second toss is event B, then
+    we say that A and B are <i><b>independent</b></i>. In this case:
+    $$P(B|A)={P(B)}$$
+  </p>
+  <img class="imageSmall" src="../img/nbcond.jpg" alt="Conditional Probability">
+  <p class="tableSub"><i>figure 1 - Bayes' rule</i></p>
+  <br>
+  <h3 class="paragraphTitle">Bayes' rule</h3>
+  <p>
+    Feel free to skip this and go directly to the actual rule, but it's
+    super easy to derive it.
+
+    Taking the formula for the conditional probability and solving
+    for marginal probability, we are having the following:
+    $${P(A|B)P(B)=P(A,B)}$$
+    If we swap A and B, we get:
+
+    $${P(B|A)P(A)=P(B,A)}$$
+    And finally, since \(P(A,B)=P(B,A)\):
+    $${P(A|B)P(B)=P(B|A)P(A)}$$
+    Solving for \(P(A|B)\), Bayes' rule:
+    $$P(A|B)={P(B|A)P(A) \over P(B)}$$
+
+    In Bayesian terms, \(P(A|B)\) is called <i>posterior probability</i>, \(P(B|A)\) <i>likelihood</i>, \(P(A)\) <i>prior probability</i> and \(P(B)\) <i>marginal probability</i>.
+  </p>
+
+  <h3 class="paragraphTitle">Training</h3>
+  <p>
+    NB is a supervised algorithm, therefore we need some kind of training examples to get started.
+    Assume we were given some manually classified sentences (i.e. some people given a sentence marked it with
+    the class he/she thinks is more relevant) as geography or economics. In reality these seven training examples
+    are by no means sufficient to make NB work properly.
+  </p>
+</br>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l">Text</th>
+    <th class="tg-yw4l">Class</th>
+  </tr>
+  <tr>
+    <td class="tg-b7b8">Capital land and labor are the three factors of production</td>
+    <td class="tg-b7b8">Economics</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Athens is the capital of Greece</td>
+    <td class="tg-yw4l">Geography</td>
+  </tr>
+  <tr>
+    <td class="tg-b7b8">The wealth of nations</td>
+    <td class="tg-b7b8">Economics</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">The Amazon river is also home to the piranha</td>
+    <td class="tg-yw4l">Geography</td>
+  </tr>
+  <tr>
+    <td class="tg-b7b8">Nile is the longest river on earth</td>
+    <td class="tg-b7b8">Geography</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">The Process of Production of Capital</td>
+    <td class="tg-yw4l">Economics</td>
+  </tr>
+  <tr>
+    <td class="tg-b7b8">Australia is wider than the moon</td>
+    <td class="tg-b7b8">Geography</td>
+  </tr>
+</table>
+<p class="tableSub"><i>table 1 - training examples</i></p>
+<br>
+<p>
+  Now suppose you were give the sentence: "Widest river in the world".
+  Before classifying it as either geography or economics we need to
+  perform the training process using the training examples listed above.
+  We can describe training in two steps:
+  <ol>
+    <li>
+      For each word \(w\) in the dictionary (i.e. all words in the training examples) and for each class \(c\), calculate the following probability \(P(w|c)\).
+      These are called <i>likelihood</i> in Bayesian terms.
+    </li>
+    <li>
+      For each class \(c\), calculate the probability \(P(c)\). This is the <i>prior</i> in Bayesian terms.
+    </li>
+  </ol>
 </p>
-<h3>Classification</h3>
+<p>
+  We will see how to calculate these after presenting a quick but important step: <i>preprocessing</i>.
+</p>
+</p>
+
+<h3 class="paragraphTitle">Preprocessing</h3>
+<p>
+  Preprocessing is a prerequisite to training (you could skip it but it's not recommended) and can be as simple as mapping the words to their lowercased or stemmed form
+  e.g. Capital&rarr;capital (lowercase) or Capitals&rarr;Capit (according to <i>Porter stemmer</i>).
+  We do that in order to make sure we group the words that should be grouped.
+  For simplicity we are applying a lowercase filter only.
+</p>
+
+<h3 class="paragraphTitle">Feature selection</h3>
+<p>
+  Furthermore, we need to create our dictionary which is going to consist of all the words which we are going to consider.
+  We can keep every single word that appears in the documents but this can lead to various issues
+  including an inflated number of features. Apart from the increased feature space, 'bad' features can also affect our results.
+</p>
+<p>
+  Intuitively, words such as 'the', 'is', 'of', etc. are very common and shouldn’t add much value,
+  since they won’t distinguish some topic (in contrast with something more context specific such as “oceanic”).
+  We call these “stopwords” and we completely remove them.
+</p>
+<p>
+  A couple of more formal ways to choose the most informative features would be ranking by their
+  <u><a href="https://en.wikipedia.org/wiki/Information_gain_in_decision_trees">Information Gain</a></u>
+  or even perform <u><a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a></u>.
+  These are slightly more advance techniques and are not in the scope of this tutorial.
+</p>
+<p>
+  Next step is to apply the lowercase filter to each word and also remove
+  common words 'the', 'of', 'is', 'to', 'on', 'than', 'are' and 'also'. After doing this, we are simply listing each word in the dictionary and their occurrences.
+</p>
+
+<img class=imageLarge src="../img/nbtrain.jpg" alt="Training example" border="1">
+<p class="tableSub"><i>figure 2 - training example</i></p>
+
+<h3 class="paragraphTitle">Counting</h3>
+<p>It's time to do the counting part - as mentioned in the beginning, it's going to be counting and multiplying only.
+  We are working with a form of NB called Multinomial NB. All you need to know for now is that this version
+  takes into account the frequencies of each word e.g. that a word appears \(n\) times in a class.
+  It's trivial to create the word/frequency mapping depicted below with basic programming skills and we are going to use it to train our model:
+</p>
+</br>
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="2">Geography</th>
+    <th class="tg-baqh" colspan="2">Economics</th>
+  </tr>
+  <tr>
+    <td class="tg-dc35">Word</td>
+    <td class="tg-dc35">Frequency</td>
+    <td class="tg-b7b8">Word</td>
+    <td class="tg-b7b8">Frequency</td>
+  </tr>
+  <tr>
+    <td class="tg-us36">river</td>
+    <td class="tg-us36">2</td>
+    <td class="tg-yw4l">production</td>
+    <td class="tg-yw4l">2</td>
+  </tr>
+  <tr>
+    <td class="tg-dc35">wider</td>
+    <td class="tg-dc35">1</td>
+    <td class="tg-b7b8">capital</td>
+    <td class="tg-b7b8">2</td>
+  </tr>
+  <tr>
+    <td class="tg-us36">piranha</td>
+    <td class="tg-us36">1</td>
+    <td class="tg-yw4l">wealth</td>
+    <td class="tg-yw4l">1</td>
+  </tr>
+  <tr>
+    <td class="tg-dc35">nile<br></td>
+    <td class="tg-dc35">1</td>
+    <td class="tg-b7b8">three</td>
+    <td class="tg-b7b8">1</td>
+  </tr>
+  <tr>
+    <td class="tg-us36">moon</td>
+    <td class="tg-us36">1</td>
+    <td class="tg-yw4l">process</td>
+    <td class="tg-yw4l">1</td>
+  </tr>
+  <tr>
+    <td class="tg-dc35">longest</td>
+    <td class="tg-dc35">1</td>
+    <td class="tg-b7b8">nations</td>
+    <td class="tg-b7b8">1</td>
+  </tr>
+  <tr>
+    <td class="tg-us36">home</td>
+    <td class="tg-us36">1</td>
+    <td class="tg-yw4l">land</td>
+    <td class="tg-yw4l">1</td>
+  </tr>
+  <tr>
+    <td class="tg-dc35">greece</td>
+    <td class="tg-dc35">1</td>
+    <td class="tg-b7b8">labor</td>
+    <td class="tg-b7b8">1</td>
+  </tr>
+  <tr>
+    <td class="tg-us36">earth</td>
+    <td class="tg-us36">1</td>
+    <td class="tg-yw4l">factors</td>
+    <td class="tg-yw4l">1</td>
+  </tr>
+  <tr>
+    <td class="tg-dc35">capital</td>
+    <td class="tg-dc35">1</td>
+    <td class="tg-b7b8"></td>
+    <td class="tg-b7b8"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36">australia</td>
+    <td class="tg-us36">1</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-dc35">athens</td>
+    <td class="tg-dc35">1</td>
+    <td class="tg-b7b8"></td>
+    <td class="tg-b7b8"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36">amazon</td>
+    <td class="tg-us36">1</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+</table>
+<p class="tableSub"><i>table 2 - counting word frequencies</i></p>
+</br>
+<h3 class="paragraphTitle">Training (cont.)</h3>
+<p>
+  Now that we are having the frequencies for each word in each class we can resume the training process. We started doing it in two steps so let's take it from there:
+  <ol>
+    <li>If you scroll up, this step requires doing a calculation for every word in the dictionary and for every class.
+      It's exactly the same work for any word and any class so let's do it for a single word and class. I randomly choose the word <i>river</i> and class <i>geography</i>:
+      $$P(river|geography)={count(river, geography) \over count(geography)}= {2 \over 13}$$
+      In words, that is the occurrences of word <i>river</i> in the geography class divided by the number of all words in geography class.
+    </li>
+    <li>The prior is even easier, it's just the number of words in geography class divided by the number of the words in the dictionary. That is:
+      $$P(geography)={count(geography) \over count(vocabulary)}={13 \over 21}$$
+    </li>
+  </ol>
+  Without doing much, we are half way there!
+  How would these data classify the sentence "Widest river in the world" now?
+</p>
+</p>
+<h3 class="paragraphTitle">Classification</h3>
 <p>
   You might be wondering why exactly we calculated these probabilities during the training process. Hopefully it will become much clearer now.
   As we said we need to classify the sentence "Widest river in the world".
@@ -424,14 +460,31 @@
   </div>
   <script async src="https://just-comments.com/w.js"></script>
 </div> <!-- content -->
-<footer class="footer">
-  <ul class="bottomlinks">
-    <li class="bottomli"><a href="https://github.com/lovemeblender"><img class=gitlogo src="../img/gb-64.png" alt="Github" height="30" width="30"></a></li>
-    <li class="bottomli"><a href="http://uk.linkedin.com/in/mdespotopoulos/"><img class=linkedinlogo src="../img/in-34.png" alt="LinkedIn" height="26" width="30"></a></li>
-    <li class="bottomli"><a href="https://twitter.com/mdespotopoulos"><img class=twitterlogo src="../img/twitter.png" alt="Twitter" height="30" width="30"></a></li>
-  </ul>
-</footer>
-</div> <!-- wrapper -->
+</div> <!--container -->
 
+<footer class="blog-footer">
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center">
+    <li class="list-inline-item">
+      <a class="btn-floating btn-fb mx-1">
+        <i class="fa fa-github"><a href="https://github.com/lovemeblender"><img src="../img/gb-64.png" alt="Github" height="30" width="30"></a></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-tw mx-1">
+        <i class="fa fa-linkedin"><a href="http://uk.linkedin.com/in/mdespotopoulos/"><img src="../img/in-34.png" alt="LinkedIn" height="28" width="34"></a></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-li mx-1">
+        <i class="fa fa-twitter"><a href="https://twitter.com/mdespotopoulos"><img src="../img/twitter.png" alt="Twitter" height="30" width="30"></a></i>
+      </a>
+    </li>
+  </ul>
+  <!-- Social buttons -->
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright: adayinlife</div>
+  <!-- Copyright -->
+</footer>
 </body>
 </html>
