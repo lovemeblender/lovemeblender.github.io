@@ -1,0 +1,28 @@
+<rss version="2.0">
+  <channel>
+    <title>adayinlife.ml</title>
+    <link>https://adayinlife.ml/</link>
+    <description>A day In life: Computer & Data Science with a pinch of music.</description>
+    <language>en</language>
+    <item>
+      <title>Just enough to get you started with Apache Spark</title>
+      <link>https://adayinlife.ml/posts/june1318.htm</link>
+      <description>
+        When Big Data became a thing some years ago, I tried several frameworks, platforms and technologies.
+        Most, if not all of them were not so good at hiding their inherent distributed nature, which caused a steep learning curve and increased complexity.
+      </description>
+      <pubDate>Wed, 13 Jun 2018 04:00:00 -0000</pubDate>
+      <guid>https://adayinlife.ml/posts/june1318.htm</guid>
+    </item>
+    <item>
+      <title>Machine Learning for the Masses: Naive Bayes (pt.1)</title>
+      <link>https://adayinlife.ml/posts/may1418.htm</link>
+      <description>
+        Machine learning doesn’t have to be or seem complicated.
+        It can get as straight-forward as counting and multiplying, which is the case with Naive Bayes.
+      </description>
+      <pubDate>Mon, 14 May 2018 04:00:00 -0000</pubDate>
+      <guid>https://adayinlife.ml/posts/may1418.htm</guid>
+    </item>
+  </channel>
+</rss>
