@@ -6,39 +6,45 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
 <url>
   <loc>https://adayinlife.ml/</loc>
+  <xhtml:link rel="alternate" hreflang="en-us" href="https://adayinlife.ml" />
   <lastmod>2018-06-21T17:40:01+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://adayinlife.ml/index.htm</loc>
+  <xhtml:link rel="alternate" hreflang="en-us" href="https://adayinlife.ml/index.htm" />
   <lastmod>2018-06-21T17:40:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://adayinlife.ml/posts/june1318.htm</loc>
+  <xhtml:link rel="alternate" hreflang="en-us" href="https://adayinlife.ml/posts/june1318.htm" />
   <lastmod>2018-06-21T17:40:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://adayinlife.ml/posts/may1418.htm</loc>
+  <xhtml:link rel="alternate" hreflang="en-us" href="https://adayinlife.ml/posts/may1418.htm" />
   <lastmod>2018-06-21T17:40:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://adayinlife.ml/posts/jul1215.htm</loc>
+  <xhtml:link rel="alternate" hreflang="en-us" href="https://adayinlife.ml/posts/jul1215.htm" />
   <lastmod>2018-06-21T17:40:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://adayinlife.ml/posts/aug1615.htm</loc>
+  <xhtml:link rel="alternate" hreflang="en-us" href="https://adayinlife.ml/posts/aug1615.htm" />
   <lastmod>2018-06-21T17:40:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://adayinlife.ml/posts/may1515.htm</loc>
+  <xhtml:link rel="alternate" hreflang="en-us" href="https://adayinlife.ml/posts/may1515.htm" />
   <lastmod>2018-06-21T17:40:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
