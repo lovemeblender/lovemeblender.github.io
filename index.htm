@@ -49,17 +49,14 @@
     <header class="blog-header py-3">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col-4 pt-1 justify-content-start">
-          <a class="text-muted" href="https://mailchi.mp/189317a0a55f/adayinlife"><img class="subscribe" src="./img/subscribe.png"></img></a>
+
         </div>
         <div class="col-4 text-center">
           <img class="logo img-fluid" src="./img/logo-desktop.png" alt="logo" border="1">
           <!--<a class="blog-header-logo text-dark" href="#"><span class=redLetter>A</span> day <span class=redLetter>I</span>n life</a>-->
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
-          <a class="text-muted" href="./rss.xml">
-            <img class=rss src="./img/rss.png"></img>
-            <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>-->
-          </a>
+
           <!--<a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>-->
         </div>
       </div>
@@ -67,7 +64,18 @@
 
     <div class="nav-scroller py-1 mb-2">
       <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="./index.htm">Home</a>
+        <a class="fb-ic" href="./index.htm">
+          <i class="fa fa-home white-text mr-4 fa-lg"> </i>
+        </a>
+        <a class="fb-ic" href="./rss.xml">
+          <i class="fa fa-rss white-text mr-4 fa-lg"> </i>
+        </a>
+        <a class="fb-ic" href="https://mailchi.mp/189317a0a55f/adayinlife">
+          <i class="fa fa-envelope white-text mr-4 fa-lg"> </i>
+        </a>
+        <a class="fb-ic" href="./podcasts/june2418.htm">
+          <i class="fa fa-microphone white-text mr-4 fa-lg"> </i>
+        </a>
       </nav>
     </div>
     <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
@@ -81,16 +89,18 @@
     <div class="row mb-2">
       <div class="col-md-6">
         <div class="card flex-md-row mb-4 box-shadow h-md-250">
-          <div class="card-body d-flex flex-column align-items-start">
+          <div class="card-body d-flex flex-column align-items-start wrap-card">
             <strong class="d-inline-block mb-2 text-primary">Data Science</strong>
             <h3 class="mb-0">
               <a class="text-dark" href="./posts/may1418.htm">Machine Learning for the Masses: Naive Bayes pt.1</a>
             </h3>
             <div class="mb-1 text-muted">May 14</div>
-            <p class="card-text mb-auto">Machine learning doesn’t have to be or seem complicated. It can get as straight-forward as counting and multiplying...</p>
+            <p class="card-text mb-auto">
+              Machine learning doesn’t have to be or seem complicated.
+              It can get as straight-forward as counting and multiplying...</p>
             <a href="./posts/may1418.htm">Continue reading</a>
           </div>
-          <img class="card-img-right flex-auto d-none d-md-block" data-src="./img/daft_spark200x250.png">
+          <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb">
         </div>
       </div>
       <div class="col-md-6">
@@ -101,7 +111,11 @@
               <a class="text-dark" href="./posts/jul1215.htm">A short hashing tale</a>
             </h3>
             <div class="mb-1 text-muted">July 12</div>
-            <p class="card-text mb-auto">Have you ever wondered what is the distribution of allocations in data structures which make use of hashing, such as hash tables or hash sets, when using different datasets? </p>
+            <p class="card-text mb-auto">
+              Have you ever wondered what is the distribution of allocations
+              in data structures which make use of hashing, such as hash tables or hash sets,
+              when using different datasets?
+            </p>
             <a href="./posts/jul1215.htm">Continue reading</a>
           </div>
           <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb">
@@ -143,7 +157,7 @@
         <!--
         <h3 class="pb-3 mb-4 font-italic border-bottom">
         From the Firehose
-      </h3>
+        </h3>
 
       <div class="blog-post">
       <h2 class="blog-post-title">Sample blog post</h2>
