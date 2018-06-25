@@ -45,6 +45,12 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://adayinlife.ml/podcasts/june2418.htm</loc>
+  <xhtml:link rel="alternate" hreflang="en-us" href="https://adayinlife.ml/podcasts/june2418.htm" />
+  <lastmod>2018-06-24T17:40:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://adayinlife.ml/privacy.htm</loc>
   <lastmod>2018-06-21T17:40:01+00:00</lastmod>
   <priority>0.80</priority>
