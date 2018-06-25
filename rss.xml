@@ -5,11 +5,21 @@
     <description>A day In life: Computer &amp; Data Science with a pinch of music.</description>
     <language>en</language>
     <item>
+      <title>Introducing A day In life Podcast</title>
+      <link>https://adayinlife.ml/podcasts/june2418.htm</link>
+      <description>
+        A quick introduction of this blog and its purpose and goals.
+      </description>
+      <pubDate>Wed, 25 Jun 2018 04:00:00 -0000</pubDate>
+      <guid>https://adayinlife.ml/podcasts/june2418.htm</guid>
+    </item>
+    <item>
       <title>Just enough to get you started with Apache Spark</title>
       <link>https://adayinlife.ml/posts/june1318.htm</link>
       <description>
         When Big Data became a thing some years ago, I tried several frameworks, platforms and technologies.
-        Most, if not all of them were not so good at hiding their inherent distributed nature, which caused a steep learning curve and increased complexity.
+        Most, if not all of them were not so good at hiding their inherent distributed nature,
+        which caused a steep learning curve and increased complexity.
       </description>
       <pubDate>Wed, 13 Jun 2018 04:00:00 -0000</pubDate>
       <guid>https://adayinlife.ml/posts/june1318.htm</guid>
