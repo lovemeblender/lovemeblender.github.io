@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="computer and data science blog">
+  <meta name="author" content="michalis despotopoulos">
+  <link rel="icon" href="../img/fav32.png">
+
+  <title>A day In life: June 27, 2018</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  CommonHTML: { linebreaks: { automatic: true }, scale: 70 },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+       });
+</script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../style.css" media="screen">
+  <link rel="icon" href="./img/fav32.ico" type="image/gif">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119754085-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-119754085-1');
+  </script>
+  <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js"
+  data-dojo-config="usePlainJson: true, isDebug: false"></script><script
+  type="text/javascript">
+  require(["mojo/signup-forms/Loader"],
+  function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"0949a3f68a174be9eb47e487f","lid":"2597c8fdeb"}) })
+  </script>
+  <!-- Hotjar Tracking Code -->
+  <script>
+  (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:918288,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <script src="https://my.hellobar.com/038f71bddc1117f2c68cbbd18859c7c0f053f423.js" type="text/javascript" charset="utf-8" async="async"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1 justify-content-start">
+        </div>
+        <div class="col-4 text-center">
+          <a href="../index.htm"><img class="logo img-fluid" src="../img/logo-desktop.png" alt="logo" border="1"></a>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <!--<a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>-->
+        </div>
+      </div>
+    </header>
+
+<div class="nav-scroller py-1 mb-2">
+  <nav class="nav d-flex justify-content-between">
+    <a class="fb-ic" href="../index.htm">
+      <i class="fa fa-home white-text mr-4 fa-lg"> </i>
+    </a>
+    <a class="fb-ic" href="../rss.xml">
+      <i class="fa fa-rss white-text mr-4 fa-lg"> </i>
+    </a>
+    <a class="fb-ic" href="https://mailchi.mp/189317a0a55f/adayinlife">
+      <i class="fa fa-envelope white-text mr-4 fa-lg"> </i>
+    </a>
+    <a class="fb-ic" href="../podcasts/june2418.htm">
+      <i class="fa fa-microphone white-text mr-4 fa-lg"> </i>
+    </a>
+  </nav>
+</div>
+<div class="content">
+  <div class = "date">June 27, 2018</div>
+  <h3 class="postTitle">Machine Learning for the Masses: Naive Bayes (pt.2)</h3>
+  <h3 class="paragraphTitle">Prologue</h3>
+  <p>
+    I hope you enjoyed <a href="may1418.htm">part 1</a> and got a good intuition on the subject.
+    In part 2, we are going to explore it a bit more so that if you understand both parts you can
+    safely add it in your skillset and check the advanced box. The main subject of this post are
+    the underlying distributions of the features we choose for our model. We are going to present and
+    explain the differences between six main Naive Bayes variations:
+    multivariate Bernoulli, multinomial, binarized multinomial, multivariate Gaussian, Flexible and Complement Naive Bayes.
+  </p>
+  <p>
+    The main purpose of this part is for anyone reading it to see that there is not a single way to create a model.
+    You are free to experiment and use a healthy amount of imagination to create a new one. Or even combine the existing ones.
+    Endless possibilities.
+  </p>
+
+  <h3 class="paragraphTitle">Introduction</h3>
+  <p>
+    You might have noticed and pondered about these weird prefixes of Naive Bayes, like Multinomial or Bernoulli. Worry not.
+    They are nothing more than the underlying distributions of the features we choose to construct our model with,
+    i.e. what distributions our features are drawn from. In <a href="may1418.htm">part 1</a>, we chose as features the
+    frequencies of each unigram
+    (i.e. single word) which allowed us to say that we were using Multinomial NB. We could have chosen the distinct occurrences
+    of trigrams in a class (e.g. whether trigram “I am going” occurs in a class or not).
+    Whatever. The important part is to understand that you get to do the feature engineering and nothing is written in stone.
+  </p>
+  <p>
+    While we could jump right at the NB variations, I think it’s best to briefly present some well known distributions so
+    that you get an idea. It’s mostly going to be plain English plus some formalities to make sure we are on the same page.
+    Before doing that I am going to briefly explain what a random variable is - the basis to explain distributions.
+  </p>
+
+  <h3 class="paragraphTitle">Random variables</h3>
+  <p>
+    It’s not the right post to extensively discuss about random variables but since they are essential to explain our
+    four distributions we can give a basic definition. A random variable is any quantity that depends on the outcome
+    of a random experiment.
+  </p>
+  <p>
+    Examples make everything clearer: let a random variable X which depends on the outcome of the dice roll and takes the
+    values 1 to 6 (we normally represent these values with the lower case version of the random variable, i.e. x).
+    The probability distribution of each random variable is the probability that each one of these values is having.
+    In the dice example, each value has the same probability of ⅙. Similarly a random variable Y can depend on the outcome
+    of the coin toss and takes the values y=0 (head) or y=1 (tail) with probability ½, in case of a fair coin.
+  </p>
+  <p>
+    In other words it’s just a practical way to organize our random events.
+    If that sounds weird, I am preparing a post with the very basics of probability theory soon.
+    Now we are going to use the building block we called a random variable and create the notion of a distribution.
+  </p>
+
+  <h3 class="paragraphTitle">Common Distributions</h3>
+  <h5>Bernoulli distribution</h5>
+  <p>
+    The simplest random variable is the one that takes two values, 0 or 1 and we say that
+    this random variable follows a Bernoulli distribution. In the general case, you can think of
+    it as the success/fail or go/no go random variable.
+  </p>
+  <h5>Binomial distribution</h5>
+  <p>
+    This is a generalization of Bernoulli distribution. Suppose we are having multiple Bernoulli
+    random variables and we are interested at the number of the successful ones.
+    We can assign this random experiment to a binomial random variable. An example of this would be the probability
+    that a coin would yield exactly
+    <a href="https://open.spotify.com/track/5Z5nbOXhsSbySVC7WUc6y9?si=wZXupWRkS8e0e6-4bTYUdA">4 tails out of 5 tosses</a>,
+    regardless of the order.
+    That’s it, just lots of Bernoulli trials. We can say that it generalizes the number of Bernoulli trials.
+  </p>
+  <h5>Multivariate Bernoulli distribution</h5>
+  <p>
+    Similar to the Binomial distribution, this one cares about the n independent Bernoulli trials.
+    So, multiple Bernoulli random variables again.
+  </p>
+  <h5>Multinoulli distribution</h5>
+  <p>
+    This is also a generalization of Bernoulli distribution. The difference from the Binomial distribution is that
+    it generalizes the number of outcomes (not the number of trials which was the Binomial distribution case).
+    If we just replace the coin toss (0 and 1) example with a dice roll (1 to 6), we’ve got a Multivariate Bernoulli distribution.
+    It is also called multinoulli or categorical distribution.
+  </p>
+  <h5>Multinomial distribution</h5>
+  <p>
+    It is more powerful, as we can find the probability that rolling a dice three times we are going to
+    get one 5 and 6 twice. Practically this is the one we used in our previous part.
+  </p>
+  <h5>Multivariate Gaussian Distribution</h5>
+  <p>
+    It is the generalization of the univariate Gaussian distribution (duh).
+    The key difference here is that all the previous distributions were discrete but this one
+    is a continuous distribution - which is going to allow for real values (e.g. average length of hair in a dog breed)!
+    Bonus: It is commonly used for Anomaly Detection.
+  </p>
+  <p>
+    The above distributions are going to help you understand subtleties in the different variants of Naive Bayes.
+    For example a common misconception is that the Multivariate NB is a Multinomial NB with Boolean attributes
+    (i.e. term frequency rounded to 1 if it’s larger than zero). In fact the latter is a whole new variant by
+    itself and we are going to describe both shortly.
+  </p>
+  <p>
+    The different naive Bayes classifiers differ mainly by the assumptions they make regarding the
+    distribution of \(P(Xi|Y)\). Let’s see what that means practically.
+  </p>
+
+  <h3 class="paragraphTitle">Naive Bayes Variants</h3>
+  <h5>Multinomial Naive Bayes</h5>
+  <p>
+    This is the variant we used in <a href="may1418.htm">part 1</a>. It is based on the multinomial distribution which
+    is a generalization of
+    Bernoulli distribution in two dimensions: trials and outcomes.
+    Key point to remember:
+    to get the likelihood of a term in a class, divide the number of occurrences of a
+    word by the occurrences of <b>all the words</b> in the class.
+    </p>
+    <p>
+    Take-away points:
+    <ul>
+      <li>This variant is powerful as it entails a lot of information.</li>
+      <li>In general performs better than the multivariate Bernoulli NB in text classification [1]</li>
+      <li>Likelihood calculated as \(occurrences\ of\ term\ i\ in\ class\ j\ \over occurrences\ of\ all\ terms\ in\ class\ j\)</li>
+    </ul>
+  </p>
+  <h5>Binarized (or Boolean) Multinomial Naive Bayes</h5>
+  <p>
+    Word occurrence may matter more than word frequency in some cases (e.g. in sentiment analysis,
+    it suffices for a word to occur once in order to register an emotion, arguably even if you want
+    to track down the intensity: “I feel happy happy happy” and “I feel happy” would both be classified as joy).
+    The only difference of this variant with the Multinomial NB is that first you <b>remove all duplicates</b>.
+    Then you just apply the multinomial NB.
+  </p>
+  <p>
+    Take-away points:
+    <ul>
+      <li>Remove duplicates and it is exactly the same with multinomial NB.</li>
+      <li>It might even outperform multinomial NB with term frequencies!</li>
+      <li>Useful when multiple occurrences don’t contribute to meaning e.g. sentiment analysis</li>
+    </ul>
+  </p>
+  <h5>Multivariate Bernoulli Naive Bayes</h5>
+  <p>
+    The key difference with the binarized multinomial NB is the denominator.
+    In this case we are interested at the number of documents instead of the number of tokens.
+    Therefore the nominator is the same with the binarized multinomial NB’s but we divide with the
+    number of documents of a class to get the likelihood. It explicitly penalizes the non-occurrence
+    of a feature (multinomial NB ignores non-occurrences). It may assign an entire book to the class
+    China because of a single occurrence of the term China, as mentioned in this
+    <a href="https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html#fig:bernoullialg">remarkable text</a>.
+  </p>
+  <p>
+    Take-away points:
+    <ul>
+      <li>Likelihood calculation as \(distinct\ occurrences\ of\ term\ i\ in\ class\ j \over documents\ in\ class\ j\) </li>
+    </ul>
+  </p>
+  <h5>Multivariate Gaussian Naive Bayes</h5>
+  <p>
+    As attributes here we apply the term frequency (as in multinomial NB) divided by the number of tokens in a document.
+    Apart from the indepence assumption we also assume that the attributes follow normal distributions per class.
+  </p>
+  <h5>Flexible Naive Bayes</h5>
+  <p>
+    It is also common to use a Gaussian distribution with Naive Bayes.
+    As mentioned earlier, this is the first continuous distribution we are seeing,
+    all the previous ones being discrete. Instead of categorical data which was the case with
+    multivariate Bernoulli distribution, here we are having real values such as 0.349 (continuous attributres).
+    Flexible Naive Bayes simply takes this a bit further. The distribution of each attribute in each category can be
+    taken to be the average of several normal distributions, one for every different value the attribute has in the training
+    data of that category [1].
+  </p>
+  <h5>Complement Naive Bayes</h5>
+  <p>
+    Exactly what a regular Naive Bayes (any variant) would do but instead of calculating the likelihood of a word occuring
+    in a class, we calculate the likelihood that it occurs in other classes. It is particularly helpful in unbalanced
+    training sets (i.e. having significantly more training examples in certain classes).
+  </p>
+  <p>
+    The scaffold of this post was inspired by the excellent paper which can be found at the references below.
+  </p>
+  <h3 class="paragraphTitle">References</h3>
+  [1] Vangelis Metsis, Ion Androutsopoulos, and Georgios Paliouras. 2006. Spam filtering with naive bayes - which naive bayes? In Proceedings of CEAS.
+</br>
+  [2] Christopher D. Manning, Prabhakar Raghavan and Hinrich Schütze, Introduction to Information Retrieval, Cambridge University Press. 2008.
+    <div class="just-comments"
+    data-apikey="9fa1f1f5-2ca0-4d89-bb34-b78c48fafcb1"
+    data-hideattribution="true">
+  </div>
+  <script async src="https://just-comments.com/w.js"></script>
+</div> <!-- content -->
+</div> <!--container -->
+
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark mt-4">
+
+  <div style="background-color: #82AFA9;">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0"></h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+          <!-- Facebook -->
+          <a class="fb-ic" href="https://www.facebook.com/adayinlifeblogging/">
+            <i class="fa fa-facebook white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic" href="https://twitter.com/mdespotopoulos?lang=en">
+            <i class="fa fa-twitter white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic" href="https://www.linkedin.com/in/mdespotopoulos/">
+            <i class="fa fa-linkedin white-text mr-4"> </i>
+          </a>
+          <a class="li-ic" href="https://www.linkedin.com/in/mdespotopoulos/">
+            <i class="fa fa-github white-text mr-4"> </i>
+          </a>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">A day In life</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Get in touch if you didn't find what you were looking for or you just want to say hi!</p>
+
+      </div>
+      <!-- Grid column -->
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="../privacy.htm">Privacy Policy</a>
+        </p>
+        <p>
+          <a href="../terms.htm">Terms of Use</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fa fa-envelope mr-3"></i> michael@adayinlife.ml
+        </p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://adayinlife.ml"> adayinlife.ml</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
