@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
-
+Disallow: /privacy.htm
+Disallow: /terms.htm
 SITEMAP: https://adayinlife.ml/sitemap.xml
